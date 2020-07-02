@@ -1,1 +1,1 @@
-# online-journal
+# team-one-project
