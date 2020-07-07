@@ -26,3 +26,21 @@ function addRandomGreeting() {
   const greetingContainer = document.getElementById('greeting-container');
   greetingContainer.innerText = greeting;
 }
+
+function collectData(text){
+    fetch('/data').then(resposnse => response.text()).then((comment) => {
+        document.getElementById('data-contianer').innerText = comment;
+    });
+}
+
+
+function fetchBlobstoreUrlAndShowForm() {
+    fetch('/blobstore-upload-url').then((response) => { 
+        return response.text();
+    })
+    .then((imageUploadUrl)=>{
+        const messageForm = document.getElementById('my-form');
+        messageForm.action = imageUploadUrl;
+        messageForm.classList.remove('hidden');
+    });
+}
