@@ -28,10 +28,10 @@ import javax.servlet.http.HttpServletResponse;
 public class DataServlet extends HttpServlet {
 
   @Override
-  public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+  public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {    
     response.setContentType("text/html;");
     response.getWriter().println("<h1>Hello world!</h1>");
-  }
+}
 
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
