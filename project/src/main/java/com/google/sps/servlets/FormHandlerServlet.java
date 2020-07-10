@@ -62,7 +62,7 @@ public class FormHandlerServlet extends HttpServlet {
     // Get the URL of the image that the user uploaded.
     String imageUrl = getUploadedFileUrl(blobKey);
 
-        // Get the labels of the image that the user uploaded.
+    // Get the labels of the image that the user uploaded.
     byte[] blobBytes = getBlobBytes(blobKey);
     String imageText = getImageText(blobBytes);
 
@@ -75,9 +75,7 @@ public class FormHandlerServlet extends HttpServlet {
     out.println("</a>");
     out.println("<p>Here are the labels we extracted:</p>");
     out.println("<ul>");
-    // for (EntityAnnotation text : imageText) {
     out.println("<li>" + imageText);
-    // }
     out.println("</ul>");
   
   }
@@ -168,9 +166,8 @@ public class FormHandlerServlet extends HttpServlet {
     ImageAnnotatorClient client = ImageAnnotatorClient.create();
     BatchAnnotateImagesResponse batchResponse = client.batchAnnotateImages(requests);
     client.close();
-    
+
     List<AnnotateImageResponse> imageResponses = batchResponse.getResponsesList();
-    // AnnotateImageResponse imageResponse = imageResponses.get(0);
 
     for (AnnotateImageResponse res : imageResponses) {
       if (res.hasError()) {
@@ -180,11 +177,6 @@ public class FormHandlerServlet extends HttpServlet {
 
       }
     }
-
-    // if (imageResponse.hasError()) {
-    //   System.err.println("Error getting image labels: " + imageResponse.getError().getMessage());
-    //   return null;
-    // }
 
     // For full list of available annotations, see http://g.co/cloud/vision/docs
       TextAnnotation annotation = imageResponses.get(0).getFullTextAnnotation();
@@ -217,7 +209,6 @@ public class FormHandlerServlet extends HttpServlet {
       System.out.println("%nComplete annotation:");
       System.out.println(annotation.getText());
 
-    // return imageResponse.getLabelAnnotationsList();
     return annotation.getText();
   }
 
