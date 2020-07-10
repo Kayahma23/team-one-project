@@ -27,7 +27,7 @@ function addRandomGreeting() {
   greetingContainer.innerText = greeting;
 }
 
-<<<<<<< HEAD
+
 function collectData(text){
     fetch('/data').then(resposnse => response.text()).then((comment) => {
         document.getElementById('data-contianer').innerText = comment;
@@ -45,7 +45,7 @@ function fetchBlobstoreUrlAndShowForm() {
         messageForm.classList.remove('hidden');
     });
 }
-=======
+
 function getTranslation(selectedObject) {
     //set the language code of the selected language
     document.getElementById('language').value = selectedObject.value;
@@ -81,4 +81,4 @@ function createMessage(messageText) {
     const message = document.getElementById('result');
     message.innerText = messageText;
 }
->>>>>>> 947be8259dec0084f4c8f4f44927ad0ed9028bf8
+

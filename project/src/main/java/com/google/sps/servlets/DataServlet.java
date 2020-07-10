@@ -14,7 +14,7 @@
 
 package com.google.sps.servlets;
 
-<<<<<<< HEAD
+
 import com.google.appengine.api.blobstore.BlobInfo;
 import com.google.appengine.api.blobstore.BlobInfoFactory;
 import com.google.appengine.api.blobstore.BlobKey;
@@ -35,11 +35,9 @@ import java.util.Map;
 import java.util.HashMap;
 import java.io.PrintWriter;
 
-=======
 import com.google.cloud.translate.Translate;
 import com.google.cloud.translate.TranslateOptions;
 import com.google.cloud.translate.Translation;
->>>>>>> 947be8259dec0084f4c8f4f44927ad0ed9028bf8
 import java.io.IOException;
 import com.google.gson.Gson;
 import java.util.ArrayList;
@@ -55,16 +53,20 @@ public class DataServlet extends HttpServlet {
 @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
+    // Get the request parameters.
+    String originalText = request.getParameter("text");
+    String languageCode = request.getParameter("languageCode");
+    
     String text = getParameter(request, "text-input", "");
     String fname = getParameter(request, "fname", "Anonymous");
     System.out.println(fname);
     String lname = getParameter(request, "lname", "Anonymous");
     System.out.println(lname);
-    String message = getParameter(request,"message", "");
+    String message = getParameter(request, "message", "");
     System.out.println(message);
-    String image = getParameter(request,"image", "");
+    String image = getParameter(request, "image", "");
     System.out.println(image);
-    String fileUrl = getParameter(request,"imageUrl", "");
+    String fileUrl = getParameter(request, "imageUrl", "");
     System.out.println(fileUrl);
     DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
 
@@ -74,13 +76,24 @@ public class DataServlet extends HttpServlet {
     messageEntity.setProperty("fname", fname);
     messageEntity.setProperty("message", message);
     messageEntity.setProperty("image", image);
-   // messageEntity.setProperty("dropdown", dropdown);
+  //messageEntity.setProperty("dropdown", dropdown);
     messageEntity.setProperty("timestamp", System.currentTimeMillis());
 
     datastore.put(messageEntity);
 
+    // Do the translation.
+    Translate translate = TranslateOptions.getDefaultInstance().getService();
+    Translation translation =
+        translate.translate(originalText, Translate.TranslateOption.targetLanguage(languageCode));
+    String translatedText = translation.getTranslatedText();
+
     response.sendRedirect("/data");
     response.sendRedirect("/index.html");
+
+    // Output the translation.
+    response.setContentType("text/html; charset=UTF-8");
+    response.setCharacterEncoding("UTF-8");
+    response.getWriter().println(translatedText);
 
     // Get the message entered by the user.
     //String message = request.getParameter("message"); 
@@ -90,7 +103,6 @@ public class DataServlet extends HttpServlet {
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-    
     Query query = new Query("Message").addSort("timestamp", SortDirection.DESCENDING);
     DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
     PreparedQuery results = datastore.prepare(query);
@@ -105,37 +117,17 @@ public class DataServlet extends HttpServlet {
     response.setContentType("application/json;");
     response.getWriter().println(json);
   } 
-    
-
+  
   private String getParameter(HttpServletRequest request, String text, String defaultValue){
     String value = request.getParameter(text);
-    if (value.equals("")) {
+    if (value == null) {
         System.out.println(defaultValue);
         return defaultValue;
     }
     return value;
   }
 
-<<<<<<< HEAD
 }
-=======
-  @Override
-  public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    // Get the request parameters.
-    String originalText = request.getParameter("text");
-    String languageCode = request.getParameter("languageCode");
 
-    // Do the translation.
-    Translate translate = TranslateOptions.getDefaultInstance().getService();
-    Translation translation =
-        translate.translate(originalText, Translate.TranslateOption.targetLanguage(languageCode));
-    String translatedText = translation.getTranslatedText();
 
-    // Output the translation.
-    response.setContentType("text/html; charset=UTF-8");
-    response.setCharacterEncoding("UTF-8");
-    response.getWriter().println(translatedText);
-  }
 
-}
->>>>>>> 947be8259dec0084f4c8f4f44927ad0ed9028bf8

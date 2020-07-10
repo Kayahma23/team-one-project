@@ -26,3 +26,59 @@ function addRandomGreeting() {
   const greetingContainer = document.getElementById('greeting-container');
   greetingContainer.innerText = greeting;
 }
+
+
+function collectData(text){
+    fetch('/data').then(resposnse => response.text()).then((comment) => {
+        document.getElementById('data-contianer').innerText = comment;
+    });
+}
+
+
+function fetchBlobstoreUrlAndShowForm() {
+    fetch('/blobstore-upload-url').then((response) => { 
+        return response.text();
+    })
+    .then((imageUploadUrl)=>{
+        const messageForm = document.getElementById('my-form');
+        messageForm.action = imageUploadUrl;
+        messageForm.classList.remove('hidden');
+    });
+}
+
+function getTranslation(selectedObject) {
+    //set the language code of the selected language
+    document.getElementById('language').value = selectedObject.value;
+
+    //set variable text to the text written by user
+    const text = document.getElementById('text').value;
+    
+    //set languageCode to the code of the selected language
+    const languageCode = document.getElementById('language').value;
+
+    //creates new search parameters to be sent with the POST request
+    const params = new URLSearchParams();
+    params.append('text', text);
+    params.append('languageCode', languageCode);
+
+    //Once language is selected, create a POST request with the text and language code
+    //the doPost method in DataServlet will receive the text and language code and translate the text
+    //and send response with translated text
+    const fetchPromise = fetch('/data', {
+          method: 'POST',
+          body: params
+        });
+
+    fetchPromise.then(handleResponse);
+}
+//convert the response to raw text
+function handleResponse(response) {
+    const responsePromise = response.text();
+    responsePromise.then(createMessage);
+}
+//build the HTML of the page
+function createMessage(messageText) {
+    const message = document.getElementById('result');
+    message.innerText = messageText;
+}
+
