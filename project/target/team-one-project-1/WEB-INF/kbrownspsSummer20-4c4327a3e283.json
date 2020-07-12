@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "kbrown-sps-summer20",
+  "private_key_id": "4c4327a3e283a4a958d0f0a58938695fda42d7cd",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQC4shn/9ynGMCLj\nJCcP19+S/YCMuQmtLwjAb+djmU5Oc1JcKPvf7/1Cku5RM540fSRZPi7nsj7HNQBL\nhQsu/WumnIt90U2kFqnAX20zecBowQkybe5u8bzHCMPEcwknZKFk2EEBSGi3aDyi\nAge6ZY3+CYtb6hWkrTcN+b6BeUJnKuozw5HQNJSqHI92R4wkV75JkP1Eg4BnR+j3\nrvyoSwx91RNNhX2WQzjCJwjsCUwHRsblrLJLznzofZqpLlavzc+QT7JutLTx05D1\nDi3dtCoRVTlsaWvQovAAO2H5hyYCCfG7TeLnMof1UvYSnmmNXZxrnglQFMepLz0+\ns43E3AfJAgMBAAECggEAXDeAx87OqsfKA4M/haeRV8D++ERDUpcTVZIKBC69bGok\nCyPjbtJSr3TRTPXq3eZFydFEdicHNUt/VDWfedzKbSvoce+ZRn6STxzWV0dJDISl\nZOqCjB5i1TXJGUMepO6XrtRS0KMotbpz26gL18Nw/BAj5saf+9MIlA/IULkMsJlg\nN9Jzs2mWxGwP5hKXIAzlE1CrkJCeHjWSgkny8ESD/JIt5xyipufXlW4Daa1cEf/8\nTb2t3VOgazsXP3rooKEadnKjfIAFFsAZ9WNevHR+SmPRrjipyoLSQ2Ff5UqdmbUT\n4Hkc3P2Ct4Bo76Ep2vFTwzQkEKJ2QaGFBQNIS11XaQKBgQDz6AQHEA6bw7CGL5tm\n4fwhOG+CN7YiOb/MzVrzRpymhQx1I4mCel4otLaMANkpoTAH+U/bB0TQSfuegbtd\nCHZCGHkdt27XHv5SGOc3cGjppCtKqUwMMDV3jGzHt+hlOjW2sxi/+X5/czeXaOZR\nlTpLT0oqvF/pfbuPCn8IMVmN9wKBgQDB2oGBaRAYrdIJSmiCjpr5lfW5kMxwenRf\notpvOdks1hPQPWXho6jdcLT31/uwDkcTr1700SU5B0Cbs6ULbqe4GA30v4HQMGR8\n63nP89EjDNcY2ij3xMFNB8yC8+nN9+wodm7E97rjjs2t3hq4cZiZ2WgDR1hfJZ4I\nH3R18JioPwKBgQDN7E4yNFFRGxeXQuxeIV+AIKisdSLVpJIVdC9cg3pQcLZC070O\nJwgGMASLEVBHgGoP4WKVVn63qC7C9V7dvf4x8X2YJD11bBpl79aOjN5WnB9cyrCE\n/dK2Wx2gRNn1VP7ygCTeN+Of8QO3Vn5V1LrByHCiwiXr+RZ4PvFfVmL4owKBgQCW\nZ5JTddCnVTXBP5oWsc5MF62vbEkye9AO46vW4Gs//lkhGIITr4c1SF0gbtM4pds/\nyrFCAYN/28ClDZzgYdp/Wyp42p09ik5tHcZFMkbxiuTYw2tF0cKooYRrlhOxWspA\nGqOW7x5xsDqky86vjHN56tRottI6AFW8t6sEVsgawQKBgQDdj4Bx6uwSO5FqO0Bt\nIgA38XmqtrnH6qDCtWIh2dR7BIQb4Lz/tyYX2x/pjYpDTvBt5y5xzWz96h6Prx8O\nEu+JvVTokaFV9HL6mIpxrZ7BkPB+OEgnv8EKjdEN5wJI3ilQ8rE7J6+cMv/ZxoYC\n7bXSz3PF4+PJ+LjUxEQKGqw61g==\n-----END PRIVATE KEY-----\n",
+  "client_email": "teamoneproject@kbrown-sps-summer20.iam.gserviceaccount.com",
+  "client_id": "107585558004904712300",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/teamoneproject%40kbrown-sps-summer20.iam.gserviceaccount.com"
+}
