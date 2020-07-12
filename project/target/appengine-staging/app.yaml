@@ -39,7 +39,19 @@ handlers:
   script: unused
   login: optional
   secure: optional
+- url: .*\.jsp
+  script: unused
+  login: optional
+  secure: optional
+- url: /my-form-handler
+  script: unused
+  login: optional
+  secure: optional
 - url: /data
+  script: unused
+  login: optional
+  secure: optional
+- url: /blobstore-upload-url
   script: unused
   login: optional
   secure: optional
