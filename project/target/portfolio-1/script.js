@@ -42,9 +42,8 @@ function fetchBlobstoreUrlAndShowForm() {
 function getTranslation(selectedObject) {
     //set the language code of the selected language
     document.getElementById('language').value = selectedObject.value;
-
-    //set variable text to the text written by user
-    const text = document.getElementById('text').value;
+    //set variable text to the text from image uploaded by user
+    const text = document.getElementById('textFromImage').innerHTML;
     
     //set languageCode to the code of the selected language
     const languageCode = document.getElementById('language').value;

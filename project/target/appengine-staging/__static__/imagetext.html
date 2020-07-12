@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Team One Project</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        
+
+function getTranslation() {
+    //set the language code of the selected language
+
+    //set variable text to the text written by user
+    const text = document.getElementById('textFromImage').value;
+    console.log("this is the text from the image: "+text);
+    
+    //set languageCode to the code of the selected language
+    const languageCode = document.getElementById('language').value;
+
+    const resultContainer = document.getElementById('result');
+    resultContainer.innerText = 'Loading...';
+
+    //creates new search parameters to be sent with the POST request
+    const params = new URLSearchParams();
+    params.append('text', text);
+    params.append('languageCode', languageCode);
+
+    //Once language is selected, create a POST request with the text and language code
+    //the doPost method in DataServlet will receive the text and language code and translate the text
+    //and send response with translated text
+    const fetchPromise = fetch('/data', {
+          method: 'POST',
+          body: params
+        })..then(response => response.text())
+        .then((translatedMessage) => {
+          resultContainer.innerText = translatedMessage;
+        });
+}
+    </script>
+    <!-- temporary styling -->
+    <style>
+      /* Form is hidden by default. */
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+      <p>Select language to translate text</p>
+      <select id="language" >
+        <option value="en">English</option>
+        <option value="es">Spanish</option>
+        <option value="hi">Hindi</option>
+        <option value="pt">Portuguese</option>
+        <option value="it">Italian</option>
+        <option value="fr">French</option>
+        <option value="ht">Creole</option>
+        <option value="he">Hebrew</option>
+        <option value="ja">Japanese</option>
+      </select>
+
+      <button onclick="getTranslation();">Translate</button>
+  </body>
+</html>

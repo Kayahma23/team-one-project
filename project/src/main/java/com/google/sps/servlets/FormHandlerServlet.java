@@ -13,7 +13,6 @@
 // limitations under the License.
 
 package com.google.sps.servlets;
-
 import com.google.appengine.api.blobstore.BlobInfo;
 import com.google.appengine.api.blobstore.BlobInfoFactory;
 import com.google.appengine.api.blobstore.BlobKey;
@@ -30,12 +29,17 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.RequestDispatcher;
 
 import com.google.cloud.vision.v1.*;
 import com.google.protobuf.ByteString;
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
+import java.io.*;  
+import java.io.*;  
+import javax.servlet.*;  
+import javax.servlet.http.*; 
 
 /**
  * When the user submits the form, Blobstore processes the file upload and then forwards the request
@@ -46,7 +50,7 @@ import java.util.ArrayList;
 public class FormHandlerServlet extends HttpServlet {
 
   @Override
-  public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+  public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     PrintWriter out = response.getWriter();
 
@@ -74,9 +78,11 @@ public class FormHandlerServlet extends HttpServlet {
     out.println("<img src=\"" + imageUrl + "\" />");
     out.println("</a>");
     out.println("<p>Here are the labels we extracted:</p>");
-    out.println("<ul>");
-    out.println("<li>" + imageText);
-    out.println("</ul>");
+    
+    request.setAttribute("imageText", imageText);
+
+    RequestDispatcher rdObj = request.getRequestDispatcher("imageTextHandler.jsp");
+    rdObj.forward(request, response); 
   
   }
 
