@@ -50,6 +50,8 @@ public class FormHandlerServlet extends HttpServlet {
 
     PrintWriter out = response.getWriter();
 
+
+
     // Get the BlobKey that points to the image uploaded by the user.
     BlobKey blobKey = getBlobKey(request, "image");
 

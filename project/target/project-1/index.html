@@ -5,11 +5,29 @@
     <title>Team One Project</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
+    <!-- temporary styling -->
+    <style>
+      /* Form is hidden by default. */
+      .hidden {
+        display: none;
+      }
+    </style>
   </head>
-  <body>
+  <body onload="fetchBlobstoreUrlAndShowForm()">
     <div id="content">
       <h1>Project</h1>
       <p>Project One.</p>
+
+      <h1>Blobstore Fetch Example</h1>
+      <p>Type a message and click submit:</p>
+
+      <form id="my-form" class="hidden" method="POST" enctype="multipart/form-data">
+        <p>Upload an image:</p>
+        <input type="file" name="image">
+        <br/><br/>
+        <button>Submit</button>
+      </form>
+
       <p>Click here to get a random message:</p>
       <button onclick="addRandomGreeting()">Hello</button>
       <div id="greeting-container"></div>
@@ -30,36 +48,5 @@
       <br></br> 
       <div id="result"></div>
     </div>
-
-    <div id="data-container">
-    <form action="/data" method="POST" target="_self">
-        <p> Please leave a comment </p>
-        <label>Name:</label><br>
-        <textarea name="fname"></textarea>
-        <br><br>
-        <textarea name="lname"></textarea>
-        <br><br>
-        <label>Comment:</label><br>
-        <textarea name="text-input"></textarea>
-        <br><br>
-    
-    <div onload="fetchBlobstoreUrlAndShowForm()">
-     <h1>Blobstore </h1>
-        <p>Type a message and click submit:</p>
-
-    <form id="my-form" class="hidden" method="POST" enctype="multipart/form-data" >
-      <p>Type some text:</p>
-      <textarea name="message"></textarea>
-      <br/>
-      <p>Upload an image:</p>
-      <input type="file" name="image">
-      <br/><br/>
-      <button>Submit</button>
-    </form>
-</form>
-        <div id="comment-container">
-        </div>
-    </div>
-
   </body>
 </html>

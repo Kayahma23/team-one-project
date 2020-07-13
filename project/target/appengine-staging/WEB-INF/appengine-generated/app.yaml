@@ -47,3 +47,7 @@ handlers:
   script: unused
   login: optional
   secure: optional
+- url: /blobstore-upload-url
+  script: unused
+  login: optional
+  secure: optional
