@@ -64,6 +64,8 @@ public class FormHandlerServlet extends HttpServlet {
 
     // Get the labels of the image that the user uploaded.
     byte[] blobBytes = getBlobBytes(blobKey);
+
+    // This is the text in the image in the form of a string
     String imageText = getImageText(blobBytes);
 
     // Output some HTML that shows the data the user entered.
@@ -77,7 +79,6 @@ public class FormHandlerServlet extends HttpServlet {
     out.println("<ul>");
     out.println("<li>" + imageText);
     out.println("</ul>");
-  
   }
 
   /** Returns a URL that points to the uploaded file. */
