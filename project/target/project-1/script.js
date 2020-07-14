@@ -15,7 +15,7 @@
 /**
  * Adds a random greeting to the page.
  */
-function addRandomGreeting() {
+/** function addRandomGreeting() {
   const greetings =
       ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
 
@@ -26,7 +26,7 @@ function addRandomGreeting() {
   const greetingContainer = document.getElementById('greeting-container');
   greetingContainer.innerText = greeting;
 }
-
+*/
 function fetchBlobstoreUrlAndShowForm() {
   fetch('/blobstore-upload-url')
       .then((response) => {
@@ -42,9 +42,8 @@ function fetchBlobstoreUrlAndShowForm() {
 function getTranslation(selectedObject) {
     //set the language code of the selected language
     document.getElementById('language').value = selectedObject.value;
-
-    //set variable text to the text written by user
-    const text = document.getElementById('text').value;
+    //set variable text to the text from image uploaded by user
+    const text = document.getElementById('textFromImage').innerHTML;
     
     //set languageCode to the code of the selected language
     const languageCode = document.getElementById('language').value;
