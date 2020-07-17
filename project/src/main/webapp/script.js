@@ -85,3 +85,21 @@ function fetchBlobstoreUrlAndShowForm() {
         messageForm.classList.remove('hidden');
       });
 }
+
+/**
+ * Grabs picture from form handler servlet.
+ */
+function getPicture() {
+  fetch('/my-form-handler').then((response) => {
+        return response.text();
+      })
+      .then(addToPage);
+}
+
+/**
+ * Adds picture to the page.
+ */
+function addToPage(response) {
+    const picContainer = document.getElementById('picture');
+    picContainer.innerHTML = response;
+}
