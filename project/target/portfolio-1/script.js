@@ -12,33 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-/**
- * Adds a random greeting to the page.
- */
-function addRandomGreeting() {
-  const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
-
-  // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
-
-  // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
-}
-
-function fetchBlobstoreUrlAndShowForm() {
-  fetch('/blobstore-upload-url')
-      .then((response) => {
-        return response.text();
-      })
-      .then((imageUploadUrl) => {
-        const messageForm = document.getElementById('my-form');
-        messageForm.action = imageUploadUrl;
-        messageForm.classList.remove('hidden');
-      });
-}
-
 function getTranslation(selectedObject) {
     //set the language code of the selected language
     document.getElementById('language').value = selectedObject.value;
@@ -74,14 +47,20 @@ function createMessage(messageText) {
     message.innerText = messageText;
 }
 
-function fetchBlobstoreUrlAndShowForm() {
-  fetch('/blobstore-upload-url')
-      .then((response) => {
+/**
+ * Grabs picture from form handler servlet
+ */
+function getPicture() {
+  fetch('/my-form-handler').then((response) => {
         return response.text();
       })
-      .then((imageUploadUrl) => {
-        const messageForm = document.getElementById('my-form');
-        messageForm.action = imageUploadUrl;
-        messageForm.classList.remove('hidden');
-      });
+      .then(addToPage);
+}
+
+/**
+ * Adds picture to the page
+ */
+function addToPage(response) {
+    const picContainer = document.getElementById('picture');
+    picContainer.innerHTML = response;
 }
