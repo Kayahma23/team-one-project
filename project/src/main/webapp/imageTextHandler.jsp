@@ -23,15 +23,16 @@
       }
     </style>
    </head>
-  <body>
-
+  <body onload="getPicture()">
       <!-- picture upload form -->
       <form id="my-form" class="hidden" method="POST" enctype="multipart/form-data">
         <p>Upload an image:</p>
         <input type="file" name="image">
         <br/><br/>
         <button>Submit</button>
-        
+
+      <!-- where picture will show -->
+      <div id="picture"></div>
       </form>
       <p id="textFromImage"><%=request.getAttribute("imageText")%></p>
       <p>Select language to translate text</p>
