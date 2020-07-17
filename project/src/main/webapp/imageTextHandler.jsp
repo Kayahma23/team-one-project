@@ -25,7 +25,7 @@
    </head>
   <body onload="getPicture()">
       <!-- picture upload form -->
-      <form id="my-form" class="hidden" method="POST" enctype="multipart/form-data">
+     <form method="POST" enctype="multipart/my-form-handler" action="<%= uploadUrl %>">
         <p>Upload an image:</p>
         <input type="file" name="image">
         <br/><br/>

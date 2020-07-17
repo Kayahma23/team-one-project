@@ -60,7 +60,7 @@ function createMessage(messageText) {
 }
 
 /**
- * Grabs picture from form handler servlet.
+ * Grabs picture from form handler servlet
  */
 function getPicture() {
   fetch('/my-form-handler').then((response) => {
