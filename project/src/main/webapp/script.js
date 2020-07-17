@@ -12,18 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-function fetchBlobstoreUrlAndShowForm() {
-  fetch('/blobstore-upload-url')
-      .then((response) => {
-        return response.text();
-      })
-      .then((imageUploadUrl) => {
-        const messageForm = document.getElementById('my-form');
-        messageForm.action = imageUploadUrl;
-        messageForm.classList.remove('hidden');
-      });
-}
-
 function getTranslation(selectedObject) {
     //set the language code of the selected language
     document.getElementById('language').value = selectedObject.value;
@@ -70,7 +58,7 @@ function getPicture() {
 }
 
 /**
- * Adds picture to the page.
+ * Adds picture to the page
  */
 function addToPage(response) {
     const picContainer = document.getElementById('picture');
