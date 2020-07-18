@@ -57,9 +57,6 @@ function getPicture() {
         return response.text();
       })
       .then(addToPage);
-    //   .catch(function() {
-    //       console.log("error caught")
-    //   });
 }
 
 /**
