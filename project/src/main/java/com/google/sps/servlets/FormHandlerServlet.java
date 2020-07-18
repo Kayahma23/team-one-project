@@ -49,12 +49,14 @@ import javax.servlet.http.*;
 @WebServlet("/my-form-handler")
 public class FormHandlerServlet extends HttpServlet {
 
-  // Stores the image's url to use between get and post methods
+  // Stores the image's url and image's text to use between get and post methods
   String imageUrl = "";
+  String imageText = "";
 
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+    imageUrl = "";
+    imageText = "";
     PrintWriter out = response.getWriter();
 
     // Get the BlobKey that points to the image uploaded by the user
@@ -70,15 +72,11 @@ public class FormHandlerServlet extends HttpServlet {
     imageUrl = getUploadedFileUrl(blobKey);
 
     // Get and store the text in the image
-    // byte[] blobBytes = getBlobBytes(blobKey);
-    // String imageText = getImageText(blobBytes);
-    
-    response.sendRedirect("/index.jsp");
-    // request.setAttribute("imageUrl", imageUrl);
+    byte[] blobBytes = getBlobBytes(blobKey);
+    imageText = getImageText(blobBytes);
 
-    // RequestDispatcher rdObj = request.getRequestDispatcher("imageTextHandler.jsp");
-    // rdObj.forward(request, response); 
-  
+    // Redirect back to main page
+    response.sendRedirect("/index.jsp");
   }
 
   @Override
@@ -87,8 +85,11 @@ public class FormHandlerServlet extends HttpServlet {
 
     // Print out image uploaded and link its own url (upon clicking it, the image will open up)
     out.println("<p>Here's the image you uploaded:</p>");
-    out.println("<a href=\"" + imageUrl + "\">");
-    out.println("<img src=\"" + imageUrl + "\" />");
+    out.println("<a class=\"imageContent\" href=\"" + imageUrl + "\">");
+    out.println("<img src=\"" + imageUrl + "\" /></a>");
+    out.println("<p id=\"textFromImage\">");
+    out.println(imageText);
+    out.println("</p>");
   }
 
   /** Returns a URL that points to the uploaded file. */
