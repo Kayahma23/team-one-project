@@ -57,8 +57,6 @@ public class FormHandlerServlet extends HttpServlet {
 
     PrintWriter out = response.getWriter();
 
-    System.out.println("before get blobkey");
-
     // Get the BlobKey that points to the image uploaded by the user
     BlobKey blobKey = getBlobKey(request, "image");
 
@@ -68,8 +66,6 @@ public class FormHandlerServlet extends HttpServlet {
       return;
     }
 
-    System.out.println("before get upload file url");
-
     // Get and store the URL of the image that the user uploaded
     imageUrl = getUploadedFileUrl(blobKey);
 
@@ -77,7 +73,6 @@ public class FormHandlerServlet extends HttpServlet {
     // byte[] blobBytes = getBlobBytes(blobKey);
     // String imageText = getImageText(blobBytes);
     
-    System.out.println("before send redirect");
     response.sendRedirect("/index.jsp");
     // request.setAttribute("imageUrl", imageUrl);
 
