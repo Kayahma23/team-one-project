@@ -2,8 +2,14 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Team One Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/object-fit-images/3.2.4/ofi.min.js"></script>
     <script src="script.js"></script>
     <!-- temporary styling -->
     <style>
@@ -15,22 +21,33 @@
   </head>
   <body onload="fetchBlobstoreUrlAndShowForm()">
     <div id="content">
-      <h1>Project</h1>
-      <p>Project One.</p>
 
-      <h1>Blobstore Fetch Example</h1>
-      <p>Type a message and click submit:</p>
+      <div class="jumbotron">
+        
+        <div class="jumbotron-background">
+            <img src="images/languagesgood.png" class="blur">
+        </div>
 
+        <div class="container">
+            <center>  
+            <h1 class="display-4">Translate Your Image Text</h1>
+            <p class="lead">Upload your image. Choose your language. Translate its text.</p>
+            <hr class="my-4">
+            <p>Google Software Product Sprint Summer 2020</p>
+            </center>
+
+       </div> 
+      </div>
+
+      <center>
       <form id="my-form" class="hidden" method="POST" enctype="multipart/form-data">
         <p>Upload an image:</p>
         <input type="file" name="image">
         <br/><br/>
         <button>Submit</button>
       </form>
-
-      <p>Click here to get a random message:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
       <div id="greeting-container"></div>
+      </center>
     </div>
   </body>
 </html>

@@ -72,6 +72,7 @@ public class FormHandlerServlet extends HttpServlet {
 
     // Output some HTML that shows the data the user entered.
     // A real codebase would probably store these in Datastore.
+    // response.sendRedirect("/index.html");
     response.setContentType("text/html");
     out.println("<p>Here's the image you uploaded:</p>");
     out.println("<a href=\"" + imageUrl + "\">");
@@ -79,6 +80,7 @@ public class FormHandlerServlet extends HttpServlet {
     out.println("</a>");
     out.println("<p>Here are the labels we extracted:</p>");
     
+    request.setAttribute("imageURL", imageUrl);
     request.setAttribute("imageText", imageText);
 
     RequestDispatcher rdObj = request.getRequestDispatcher("imageTextHandler.jsp");

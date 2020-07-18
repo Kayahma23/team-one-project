@@ -1,9 +1,33 @@
 #content {
   margin-left: auto;
   margin-right: auto;
-  width: 650px;
+ 
 }
 
 #greeting-container {
   margin-top: 20px;
+}
+
+.jumbotron {
+  position:relative;
+  overflow:hidden;
+}
+
+.jumbotron .container {
+  position:relative;
+  z-index:2;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.jumbotron-background {
+  object-fit:cover;
+  position:absolute;
+  top:0;
+  z-index:1;
+  width:100%;
+}
+
+img.blur {
+   -webkit-filter: blur(4px);
+   filter: blur(4px);
 }
