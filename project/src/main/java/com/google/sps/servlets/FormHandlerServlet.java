@@ -49,14 +49,20 @@ import javax.servlet.http.*;
 @WebServlet("/my-form-handler")
 public class FormHandlerServlet extends HttpServlet {
 
+  // Stores the image's url and image's text to use between get and post methods
+  String imageUrl = "";
+  String imageText = "";
+
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+    imageUrl = "";
+    imageText = "";
     PrintWriter out = response.getWriter();
 
-
-
     // Get the BlobKey that points to the image uploaded by the user.
+
+    // Get the BlobKey that points to the image uploaded by the user
+
     BlobKey blobKey = getBlobKey(request, "image");
 
     // User didn't upload a file, so render an error message.
@@ -65,17 +71,24 @@ public class FormHandlerServlet extends HttpServlet {
       return;
     }
 
-    // Get the URL of the image that the user uploaded.
-    String imageUrl = getUploadedFileUrl(blobKey);
+    // Get and store the URL of the image that the user uploaded
+    imageUrl = getUploadedFileUrl(blobKey);
 
-    // Get the labels of the image that the user uploaded.
+    // Get and store the text in the image
     byte[] blobBytes = getBlobBytes(blobKey);
-    String imageText = getImageText(blobBytes);
+    imageText = getImageText(blobBytes);
 
-    // Output some HTML that shows the data the user entered.
-    // A real codebase would probably store these in Datastore.
-    response.setContentType("text/html");
+    // Redirect back to main page
+    response.sendRedirect("/index.jsp");
+  }
+
+  @Override
+  public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    PrintWriter out = response.getWriter();
+
+    // Print out image uploaded and link its own url (upon clicking it, the image will open up)
     out.println("<p>Here's the image you uploaded:</p>");
+
     out.println("<a href=\"" + imageUrl + "\">");
     out.println("<img src=\"" + imageUrl + "\" />");
     out.println("</a>");
@@ -91,16 +104,24 @@ public class FormHandlerServlet extends HttpServlet {
     //Change from forward to include
     rdObj.include(request, response); 
   
+
+    out.println("<a class=\"imageContent\" href=\"" + imageUrl + "\">");
+    out.println("<img src=\"" + imageUrl + "\" /></a>");
+    out.println("<p id=\"textFromImage\">");
+    out.println(imageText);
+    out.println("</p>");
+
   }
 
   /** Returns a URL that points to the uploaded file. */
   private String getUploadedFileUrl(BlobKey blobKey) {
+
+      // Instantiate Image Service Factory instance
     ImagesService imagesService = ImagesServiceFactory.getImagesService();
     ServingUrlOptions options = ServingUrlOptions.Builder.withBlobKey(blobKey);
     String url = imagesService.getServingUrl(options);
 
-    // GCS's localhost preview is not actually on localhost,
-    // so make the URL relative to the current domain.
+    // GCS's localhost preview is not actually on localhost, so make the URL relative to the current domain.
     if(url.startsWith("http://localhost:8080/")){
       url = url.replace("http://localhost:8080/", "/");
      
@@ -113,6 +134,7 @@ public class FormHandlerServlet extends HttpServlet {
    * upload a file.
    */
   private BlobKey getBlobKey(HttpServletRequest request, String formInputElementName) {
+    // Instantiate Blobstore Service Factory Instance and get the blobkey of the image uploaded
     BlobstoreService blobstoreService = BlobstoreServiceFactory.getBlobstoreService();
     Map<String, List<BlobKey>> blobs = blobstoreService.getUploads(request);
     List<BlobKey> blobKeys = blobs.get("image");
@@ -140,6 +162,7 @@ public class FormHandlerServlet extends HttpServlet {
    * BlobKey parameter.
    */
   private byte[] getBlobBytes(BlobKey blobKey) throws IOException {
+    // Instantiate Blobstore Service Factory Instance and get byte array output stream
     BlobstoreService blobstoreService = BlobstoreServiceFactory.getBlobstoreService();
     ByteArrayOutputStream outputBytes = new ByteArrayOutputStream();
 
@@ -164,7 +187,7 @@ public class FormHandlerServlet extends HttpServlet {
   }
 
   /**
-   * Uses the Google Cloud Vision API to generate a list of labels that apply to the image
+   * Uses the Google Cloud Vision API to generate the text in the image
    * represented by the binary data stored in imgBytes.
    */
   private String getImageText(byte[] imgBytes) throws IOException {
@@ -192,6 +215,7 @@ public class FormHandlerServlet extends HttpServlet {
       }
     }
 
+    // Parse text in image and reflect structure
     // For full list of available annotations, see http://g.co/cloud/vision/docs
       TextAnnotation annotation = imageResponses.get(0).getFullTextAnnotation();
       for (Page page : annotation.getPagesList()) {
@@ -226,7 +250,9 @@ public class FormHandlerServlet extends HttpServlet {
     return annotation.getText();
   }
 
+
 }
+
 
 
 

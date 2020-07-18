@@ -12,6 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+
 /**
  * Adds a random greeting to the page.
  */
@@ -72,4 +73,22 @@ function handleResponse(response) {
 function createMessage(messageText) {
     const message = document.getElementById('result');
     message.innerText = messageText;
+}
+
+/**
+ * Grabs picture from form handler servlet
+ */
+function getPicture() {
+  fetch('/my-form-handler').then((response) => {
+        return response.text();
+      })
+      .then(addToPage);
+}
+
+/**
+ * Adds picture to the page
+ */
+function addToPage(response) {
+    const picContainer = document.getElementById('picture');
+    picContainer.innerHTML = response;
 }
