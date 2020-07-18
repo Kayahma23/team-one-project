@@ -81,6 +81,8 @@ public class FormHandlerServlet extends HttpServlet {
     out.println("</a>");
     out.println("<p>Here are the labels we extracted:</p>");
     
+
+    
     request.setAttribute("imageText", imageText);
 
     //Request imageTextHandler.jsp- can we switch this to html?
@@ -101,6 +103,7 @@ public class FormHandlerServlet extends HttpServlet {
     // so make the URL relative to the current domain.
     if(url.startsWith("http://localhost:8080/")){
       url = url.replace("http://localhost:8080/", "/");
+     
     }
     return url;
   }

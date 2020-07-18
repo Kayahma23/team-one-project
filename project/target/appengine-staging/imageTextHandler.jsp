@@ -22,5 +22,7 @@
       </select>
       <br></br>
       <div id="result"></div>
+      <form name="/my-form-handler" method="post" action="text/html" target= "_self"> </form>
   </body>
+  
 </html>

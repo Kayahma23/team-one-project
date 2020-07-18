@@ -8,18 +8,18 @@
   <context-param>
     <param-name>org.eclipse.jetty.tlds</param-name>
     <param-value><![CDATA[
-    "jar:${WAR.uri}/WEB-INF/lib/org.apache.taglibs.taglibs-standard-impl-1.2.5.jar!/META-INF/x.tld",
+    "jar:${WAR.uri}/WEB-INF/lib/org.apache.taglibs.taglibs-standard-impl-1.2.5.jar!/META-INF/fmt-1_0-rt.tld",
     "jar:${WAR.uri}/WEB-INF/lib/org.apache.taglibs.taglibs-standard-impl-1.2.5.jar!/META-INF/c-1_0-rt.tld",
     "jar:${WAR.uri}/WEB-INF/lib/org.apache.taglibs.taglibs-standard-impl-1.2.5.jar!/META-INF/permittedTaglibs.tld",
-    "jar:${WAR.uri}/WEB-INF/lib/org.apache.taglibs.taglibs-standard-impl-1.2.5.jar!/META-INF/c-1_1.tld",
-    "jar:${WAR.uri}/WEB-INF/lib/org.apache.taglibs.taglibs-standard-impl-1.2.5.jar!/META-INF/fmt.tld",
-    "jar:${WAR.uri}/WEB-INF/lib/org.apache.taglibs.taglibs-standard-impl-1.2.5.jar!/META-INF/x-1_0-rt.tld",
     "jar:${WAR.uri}/WEB-INF/lib/org.apache.taglibs.taglibs-standard-impl-1.2.5.jar!/META-INF/fn.tld",
+    "jar:${WAR.uri}/WEB-INF/lib/org.apache.taglibs.taglibs-standard-impl-1.2.5.jar!/META-INF/x.tld",
+    "jar:${WAR.uri}/WEB-INF/lib/org.apache.taglibs.taglibs-standard-impl-1.2.5.jar!/META-INF/c-1_1.tld",
     "jar:${WAR.uri}/WEB-INF/lib/org.apache.taglibs.taglibs-standard-impl-1.2.5.jar!/META-INF/sql.tld",
     "jar:${WAR.uri}/WEB-INF/lib/org.apache.taglibs.taglibs-standard-impl-1.2.5.jar!/META-INF/c.tld",
+    "jar:${WAR.uri}/WEB-INF/lib/org.apache.taglibs.taglibs-standard-impl-1.2.5.jar!/META-INF/x-1_0-rt.tld",
+    "jar:${WAR.uri}/WEB-INF/lib/org.apache.taglibs.taglibs-standard-impl-1.2.5.jar!/META-INF/scriptfree.tld",
     "jar:${WAR.uri}/WEB-INF/lib/org.apache.taglibs.taglibs-standard-impl-1.2.5.jar!/META-INF/sql-1_0-rt.tld",
-    "jar:${WAR.uri}/WEB-INF/lib/org.apache.taglibs.taglibs-standard-impl-1.2.5.jar!/META-INF/fmt-1_0-rt.tld",
-    "jar:${WAR.uri}/WEB-INF/lib/org.apache.taglibs.taglibs-standard-impl-1.2.5.jar!/META-INF/scriptfree.tld"]]></param-value>
+    "jar:${WAR.uri}/WEB-INF/lib/org.apache.taglibs.taglibs-standard-impl-1.2.5.jar!/META-INF/fmt.tld"]]></param-value>
   </context-param>
   <context-param>
     <param-name>org.eclipse.jetty.resources</param-name>
@@ -66,7 +66,7 @@
   </servlet>
   <servlet>
     <servlet-name>org.apache.jsp.imageTextHandler_jsp</servlet-name>
-    <servlet-class origin="WebDescriptor(file:///home/kbrown/team-one-project/project/target/appengine-staging/WEB-INF/web.xml):6">org.apache.jsp.imageTextHandler_jsp</servlet-class>
+    <servlet-class origin="WebDescriptor(file:///home/kbrown/software-product-sprint/team-one-project/project/target/appengine-staging/WEB-INF/web.xml):6">org.apache.jsp.imageTextHandler_jsp</servlet-class>
     <async-supported>false</async-supported>
   </servlet>
   <servlet>
@@ -104,7 +104,7 @@
     <servlet-name>_ah_snapshot</servlet-name>
     <url-pattern>/_ah/snapshot</url-pattern>
   </servlet-mapping>
-  <servlet-mapping origin="WebDescriptor(file:///home/kbrown/team-one-project/project/target/appengine-staging/WEB-INF/web.xml):18">
+  <servlet-mapping origin="WebDescriptor(file:///home/kbrown/software-product-sprint/team-one-project/project/target/appengine-staging/WEB-INF/web.xml):18">
     <servlet-name>org.apache.jsp.imageTextHandler_jsp</servlet-name>
     <url-pattern>/imageTextHandler.jsp</url-pattern>
   </servlet-mapping>
