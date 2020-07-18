@@ -13,6 +13,7 @@
 // limitations under the License.
 
 function getTranslation(selectedObject) {
+    console.log("inside get Translation")
     //set the language code of the selected language
     document.getElementById('language').value = selectedObject.value;
     //set variable text to the text from image uploaded by user
