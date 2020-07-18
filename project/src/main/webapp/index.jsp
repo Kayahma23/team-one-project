@@ -33,11 +33,12 @@ limitations under the License.
   <body onload="getPicture()">
 
     <!-- form for picture upload -->
-    <form method="POST" enctype="multipart/my-form-handler" action="<%= uploadUrl %>">
+    <form method="POST" enctype="multipart/form-data" action="<%= uploadUrl %>">
       <p>Type some text:</p>
       <textarea name="message"></textarea>
       <br/>
       <p>Upload an image:</p>
+      <p>test text here!!!</p>
       <input type="file" name="image">
       <br/><br/>
       <button>Submit</button>

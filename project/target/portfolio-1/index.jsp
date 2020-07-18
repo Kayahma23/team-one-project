@@ -38,6 +38,7 @@ limitations under the License.
       <textarea name="message"></textarea>
       <br/>
       <p>Upload an image:</p>
+      <p>test text here!!!</p>
       <input type="file" name="image">
       <br/><br/>
       <button>Submit</button>

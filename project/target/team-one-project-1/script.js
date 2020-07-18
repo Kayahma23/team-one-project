@@ -12,17 +12,56 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+function getTranslation(selectedObject) {
+    //set the language code of the selected language
+    document.getElementById('language').value = selectedObject.value;
+    //set variable text to the text from image uploaded by user
+    const text = document.getElementById('textFromImage').innerHTML;
+    
+    //set languageCode to the code of the selected language
+    const languageCode = document.getElementById('language').value;
+
+    //creates new search parameters to be sent with the POST request
+    const params = new URLSearchParams();
+    params.append('text', text);
+    params.append('languageCode', languageCode);
+
+    //Once language is selected, create a POST request with the text and language code
+    //the doPost method in DataServlet will receive the text and language code and translate the text
+    //and send response with translated text
+    const fetchPromise = fetch('/data', {
+          method: 'POST',
+          body: params
+        });
+
+    fetchPromise.then(handleResponse);
+}
+//convert the response to raw text
+function handleResponse(response) {
+    const responsePromise = response.text();
+    responsePromise.then(createMessage);
+}
+//build the HTML of the page
+function createMessage(messageText) {
+    const message = document.getElementById('result');
+    message.innerText = messageText;
+}
+
 /**
- * Adds a random greeting to the page.
+ * Grabs picture from form handler servlet
  */
-function addRandomGreeting() {
-  const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
+function getPicture() {
+  console.log("inside get picture")
+  fetch('/my-form-handler').then((response) => {
+        return response.text();
+      })
+      .then(addToPage);
+}
 
-  // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
-
-  // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
+/**
+ * Adds picture to the page
+ */
+function addToPage(response) {
+    const picContainer = document.getElementById('picture');
+    picContainer.innerHTML = response;
 }
