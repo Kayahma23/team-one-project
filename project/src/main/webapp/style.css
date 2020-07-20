@@ -4,8 +4,10 @@
  
 }
 
-#greeting-container {
-  margin-top: 20px;
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    background-color: rgb(253, 238, 255);
 }
 
 .jumbotron {
@@ -16,11 +18,12 @@
 .jumbotron .container {
   position:relative;
   z-index:2;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Carter One', cursive;
+  
 }
 
 .jumbotron-background {
-  object-fit:cover;
+  object-fit:contain;
   position:absolute;
   top:0;
   z-index:1;
@@ -30,4 +33,18 @@
 img.blur {
    -webkit-filter: blur(4px);
    filter: blur(4px);
+}
+
+.button1 {
+  background-color:rgb(253, 238, 255);
+  color: black;
+  padding: 5px 12px;
+  border: 2px solid #555555;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.button1:hover {
+  background-color: #555555;
+  color: rgb(253, 238, 255);
 }
