@@ -92,3 +92,4 @@ function addToPage(response) {
     const picContainer = document.getElementById('picture');
     picContainer.innerHTML = response;
 }
+
