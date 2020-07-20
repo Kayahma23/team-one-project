@@ -1,7 +1,11 @@
+  
 #content {
   margin-left: auto;
   margin-right: auto;
- 
+}
+
+#greeting-container {
+  margin-top: 20px;
 }
 
 body {
@@ -23,7 +27,7 @@ body {
 }
 
 .jumbotron-background {
-  object-fit:contain;
+  object-fit:cover;
   position:absolute;
   top:0;
   z-index:1;

@@ -63,26 +63,25 @@ limitations under the License.
       <p>Upload an image:</p>
       <input type="file" name="image">
       <br/><br/>
-      <button class="button1" >Submit</button>
+      <button class="button1">Submit</button>
     </form>
     <div id="picture"></div>
 
     <!-- translation selector  -->
-    <p id="textFromImage"><%=request.getAttribute("imageText")%></p>
-      <p>Select language to translate text</p>
-      <select class="button1" id="language" onchange="getTranslation(this);">
-        <option value="en">English</option>
-        <option value="es">Spanish</option>
-        <option value="hi">Hindi</option>
-        <option value="pt">Portuguese</option>
-        <option value="it">Italian</option>
-        <option value="fr">French</option>
-        <option value="ht">Creole</option>
-        <option value="he">Hebrew</option>
-        <option value="ja">Japanese</option>
-      </select>
-      <br></br>
-      <div id="result"></div>
-      </center>
+    <p>Select language to translate text</p>
+    <select class="button1" id="language" onchange="getTranslation(this);">
+     <option value="en">English</option>
+     <option value="es">Spanish</option>
+     <option value="hi">Hindi</option>
+     <option value="pt">Portuguese</option>
+     <option value="it">Italian</option>
+     <option value="fr">French</option>
+     <option value="ht">Creole</option>
+     <option value="he">Hebrew</option>
+     <option value="ja">Japanese</option>
+    </select>
+    <br></br>
+    <div id="result"></div>
+    </center>
   </body>
 </html>

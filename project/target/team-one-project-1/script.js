@@ -51,7 +51,6 @@ function createMessage(messageText) {
  * Grabs picture from form handler servlet
  */
 function getPicture() {
-  console.log("inside get picture")
   fetch('/my-form-handler').then((response) => {
         return response.text();
       })
