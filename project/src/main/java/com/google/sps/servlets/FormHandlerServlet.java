@@ -50,17 +50,14 @@ import javax.servlet.http.*;
 public class FormHandlerServlet extends HttpServlet {
 
   // Stores the image's url and image's text to use between get and post methods
-  String imageUrl = "";
-  String imageText = "";
+  BlobKey blobKey = null;
 
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    imageUrl = "";
-    imageText = "";
     PrintWriter out = response.getWriter();
 
     // Get the BlobKey that points to the image uploaded by the user
-    BlobKey blobKey = getBlobKey(request, "image");
+    blobKey = getBlobKey(request, "image");
 
     // User didn't upload a file, so render an error message.
     if (blobKey == null) {
@@ -68,34 +65,40 @@ public class FormHandlerServlet extends HttpServlet {
       return;
     }
 
-    // Get and store the URL of the image that the user uploaded
-    imageUrl = getUploadedFileUrl(blobKey);
-
-    // Get and store the text in the image
-    byte[] blobBytes = getBlobBytes(blobKey);
-    imageText = getImageText(blobBytes);
-
     // Redirect back to main page
     response.sendRedirect("/index.jsp");
   }
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    PrintWriter out = response.getWriter();
+    if (blobKey != null) {
+        // Set content type and character encoding and instantiate output stream
+        response.setContentType("text/html; charset=UTF-8");
+        response.setCharacterEncoding("UTF-8");
+        ServletOutputStream out = response.getOutputStream();
 
-    // Print out image uploaded and link its own url (upon clicking it, the image will open up)
-    out.println("<p>Here's the image you uploaded:</p>");
-    out.println("<a class=\"imageContent\" href=\"" + imageUrl + "\">");
-    out.println("<img src=\"" + imageUrl + "\" /></a>");
-    out.println("<p id=\"textFromImage\">");
-    out.println(imageText);
-    out.println("</p>");
+
+        // Print out image uploaded and link its own url (upon clicking it, the image will open up)        
+        out.println("<p>Here's the image you uploaded:</p>");
+        String imageUrl = getUploadedFileUrl(blobKey);
+        out.println("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">");
+        out.println("<a class=\"imageContent\" href=\"" + imageUrl + "\">");
+        out.println("<img src=\"" + imageUrl + "\" /></a>");
+
+        // // Get and store the text in the image
+        byte[] blobBytes = getBlobBytes(blobKey);
+        
+        if (getImageText(blobBytes, out) == null) {
+            // If an error arises while parsing text from image
+            out.println("Error grabbing text from image.");
+        }
+    }
   }
 
   /** Returns a URL that points to the uploaded file. */
   private String getUploadedFileUrl(BlobKey blobKey) {
 
-      // Instantiate Image Service Factory instance
+    // Instantiate Image Service Factory instance
     ImagesService imagesService = ImagesServiceFactory.getImagesService();
     ServingUrlOptions options = ServingUrlOptions.Builder.withBlobKey(blobKey);
     String url = imagesService.getServingUrl(options);
@@ -149,8 +152,7 @@ public class FormHandlerServlet extends HttpServlet {
     boolean continueReading = true;
     while (continueReading) {
       // end index is inclusive, so we have to subtract 1 to get fetchSize bytes
-      byte[] b =
-          blobstoreService.fetchData(blobKey, currentByteIndex, currentByteIndex + fetchSize - 1);
+      byte[] b = blobstoreService.fetchData(blobKey, currentByteIndex, currentByteIndex + fetchSize - 1);
       outputBytes.write(b);
 
       // if we read fewer bytes than we requested, then we reached the end
@@ -160,7 +162,6 @@ public class FormHandlerServlet extends HttpServlet {
 
       currentByteIndex += fetchSize;
     }
-
     return outputBytes.toByteArray();
   }
 
@@ -168,7 +169,7 @@ public class FormHandlerServlet extends HttpServlet {
    * Uses the Google Cloud Vision API to generate the text in the image
    * represented by the binary data stored in imgBytes.
    */
-  private String getImageText(byte[] imgBytes) throws IOException {
+  private String getImageText(byte[] imgBytes, ServletOutputStream out) throws IOException {
     // Get byte string and make the image, feature and request instances
     ByteString byteString = ByteString.copyFrom(imgBytes);
     Image image = Image.newBuilder().setContent(byteString).build();
@@ -186,46 +187,19 @@ public class FormHandlerServlet extends HttpServlet {
 
     for (AnnotateImageResponse res : imageResponses) {
       if (res.hasError()) {
-        System.out.format("Error: %s%n", res.getError().getMessage());
+        // If response has error
         return null;
       } else {
-
-      }
-    }
-
-    // Parse text in image and reflect structure
-    // For full list of available annotations, see http://g.co/cloud/vision/docs
-      TextAnnotation annotation = imageResponses.get(0).getFullTextAnnotation();
-      for (Page page : annotation.getPagesList()) {
-        String pageText = "";
-        for (Block block : page.getBlocksList()) {
-          String blockText = "";
-          for (Paragraph para : block.getParagraphsList()) {
-            String paraText = "";
-            for (Word word : para.getWordsList()) {
-              String wordText = "";
-              for (Symbol symbol : word.getSymbolsList()) {
-                wordText = wordText + symbol.getText();
-                System.out.format(
-                    "Symbol text: %s (confidence: %f)%n",
-                    symbol.getText(), symbol.getConfidence());
-              }
-              System.out.format(
-                  "Word text: %s (confidence: %f)%n%n", wordText, word.getConfidence());
-              paraText = String.format("%s %s", paraText, wordText);
-            }
-            // Output Example using Paragraph:
-            System.out.println("%nParagraph: %n" + paraText);
-            System.out.format("Paragraph Confidence: %f%n", para.getConfidence());
-            blockText = blockText + paraText;
-          }
-          pageText = pageText + blockText;
+        // Print out the text in the image
+        for (int i = 0; i < imageResponses.size(); i++) {
+         TextAnnotation annotation = imageResponses.get(i).getFullTextAnnotation();
+         out.println("<div charset=\"UTF-8\" id=\"textFromImage\">");
+         out.println("<br/>" + annotation.getText().replace("\n", "<br/>"));
+         out.println("</div>");
         }
       }
-      System.out.println("%nComplete annotation:");
-      System.out.println(annotation.getText());
-
-    return annotation.getText();
+    }   
+    return "OK";
   }
 
 }

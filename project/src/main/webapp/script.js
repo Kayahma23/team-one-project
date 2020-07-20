@@ -44,7 +44,7 @@ function handleResponse(response) {
 //build the HTML of the page
 function createMessage(messageText) {
     const message = document.getElementById('result');
-    message.innerText = messageText;
+    message.innerText = messageText.replace(/<br>/g, "\n");
 }
 
 /**
