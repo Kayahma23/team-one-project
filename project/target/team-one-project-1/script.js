@@ -13,7 +13,6 @@
 // limitations under the License.
 
 function getTranslation(selectedObject) {
-    console.log("inside get Translation")
     //set the language code of the selected language
     document.getElementById('language').value = selectedObject.value;
     //set variable text to the text from image uploaded by user
@@ -52,7 +51,6 @@ function createMessage(messageText) {
  * Grabs picture from form handler servlet
  */
 function getPicture() {
-  console.log("inside get picture")
   fetch('/my-form-handler').then((response) => {
         return response.text();
       })

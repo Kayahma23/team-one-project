@@ -82,7 +82,7 @@ public class FormHandlerServlet extends HttpServlet {
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     PrintWriter out = response.getWriter();
-
+    
     // Print out image uploaded and link its own url (upon clicking it, the image will open up)
     out.println("<p>Here's the image you uploaded:</p>");
     out.println("<a class=\"imageContent\" href=\"" + imageUrl + "\">");
