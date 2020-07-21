@@ -41,7 +41,6 @@ limitations under the License.
         <div class="jumbotron-background">
             <img src="images/languagesgood.png" class="blur">
         </div>
-
         <div class="container">
             <center>  
             <h1 class="display-4">Translate Your Image Text</h1>
@@ -49,7 +48,6 @@ limitations under the License.
             <hr class="my-4">
             <p>Google Software Product Sprint Summer 2020</p>
             </center>
-
         </div> 
       </div>
       <center>

@@ -1,3 +1,4 @@
+  
 #content {
   margin-left: auto;
   margin-right: auto;
@@ -22,7 +23,11 @@ body {
   position:relative;
   z-index:2;
   font-family: 'Carter One', cursive;
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> origin/master
 }
 
 .jumbotron-background {
@@ -50,4 +55,8 @@ img.blur {
 .button1:hover {
   background-color: #555555;
   color: rgb(253, 238, 255);
+<<<<<<< HEAD
 } 
+=======
+}
+>>>>>>> origin/master

@@ -1,0 +1,54 @@
+  
+#content {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#greeting-container {
+  margin-top: 20px;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    background-color: rgb(253, 238, 255);
+}
+
+.jumbotron {
+  position:relative;
+  overflow:hidden;
+}
+
+.jumbotron .container {
+  position:relative;
+  z-index:2;
+  font-family: 'Carter One', cursive;
+  
+}
+
+.jumbotron-background {
+  object-fit:cover;
+  position:absolute;
+  top:0;
+  z-index:1;
+  width:100%;
+}
+
+img.blur {
+   -webkit-filter: blur(4px);
+   filter: blur(4px);
+}
+
+.button1 {
+  background-color:rgb(253, 238, 255);
+  color: black;
+  padding: 5px 12px;
+  border: 2px solid #555555;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.button1:hover {
+  background-color: #555555;
+  color: rgb(253, 238, 255);
+}
