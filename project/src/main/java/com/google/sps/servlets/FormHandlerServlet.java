@@ -23,7 +23,6 @@ import com.google.appengine.api.images.ImagesServiceFactory;
 import com.google.appengine.api.images.ServingUrlOptions;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.lang.String;
 import java.util.List;
 import java.util.Map;
 import javax.servlet.annotation.WebServlet;
@@ -60,16 +59,11 @@ public class FormHandlerServlet extends HttpServlet {
     imageText = "";
     PrintWriter out = response.getWriter();
 
-
     // Get the BlobKey that points to the image uploaded by the user
-
     BlobKey blobKey = getBlobKey(request, "image");
-    //New Added 4:08PM
-    //BlobKey blobKeyString = getKeyString(request,"image");
-    //blobKeyString = blobKey.getKeyString(request,"image");
 
     // User didn't upload a file, so render an error message.
-    if (blobKey == null ) {
+    if (blobKey == null) {
       out.println("Please upload an image file.");
       return;
     }
@@ -88,32 +82,14 @@ public class FormHandlerServlet extends HttpServlet {
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     PrintWriter out = response.getWriter();
-
+    
     // Print out image uploaded and link its own url (upon clicking it, the image will open up)
     out.println("<p>Here's the image you uploaded:</p>");
-
-    out.println("<a href=\"" + imageUrl + "\">");
-    out.println("<img src=\"" + imageUrl + "\" />");
-    out.println("</a>");
-    out.println("<p>Here are the labels we extracted:</p>");
-    
-
-    
-    request.setAttribute("imageText", imageText);
-
-    //Request imageTextHandler.jsp- can we switch this to html?
-    RequestDispatcher rdObj = request.getRequestDispatcher("imageTextHandler.jsp");
-    //Could be either .forward or .include forwarding to the servlet
-    //Change from forward to include
-    rdObj.include(request, response); 
-  
-
     out.println("<a class=\"imageContent\" href=\"" + imageUrl + "\">");
     out.println("<img src=\"" + imageUrl + "\" /></a>");
     out.println("<p id=\"textFromImage\">");
     out.println(imageText);
     out.println("</p>");
-
   }
 
   /** Returns a URL that points to the uploaded file. */
@@ -127,7 +103,6 @@ public class FormHandlerServlet extends HttpServlet {
     // GCS's localhost preview is not actually on localhost, so make the URL relative to the current domain.
     if(url.startsWith("http://localhost:8080/")){
       url = url.replace("http://localhost:8080/", "/");
-     
     }
     return url;
   }
@@ -141,20 +116,14 @@ public class FormHandlerServlet extends HttpServlet {
     BlobstoreService blobstoreService = BlobstoreServiceFactory.getBlobstoreService();
     Map<String, List<BlobKey>> blobs = blobstoreService.getUploads(request);
     List<BlobKey> blobKeys = blobs.get("image");
-     
-    
+
     // User submitted form without selecting a file, so we can't get a BlobKey. (dev server)
-    if (blobKeys == null || blobKeys.isEmpty() ) {
+    if (blobKeys == null || blobKeys.isEmpty()) {
       return null;
     }
 
     // Our form only contains a single file input, so get the first index.
     BlobKey blobKey = blobKeys.get(0);
-    //blobKey.getKeyString();
-    //Original
-    
-    
-    
 
     // User submitted form without selecting a file, so the BlobKey is empty. (live server)
     BlobInfo blobInfo = new BlobInfoFactory().loadBlobInfo(blobKey);
@@ -164,7 +133,6 @@ public class FormHandlerServlet extends HttpServlet {
     }
 
     return blobKey;
-
   }
 
   /**
@@ -260,9 +228,4 @@ public class FormHandlerServlet extends HttpServlet {
     return annotation.getText();
   }
 
-
 }
-
-
-
-
