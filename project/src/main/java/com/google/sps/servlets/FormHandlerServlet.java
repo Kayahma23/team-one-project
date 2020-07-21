@@ -203,18 +203,15 @@ public class FormHandlerServlet extends HttpServlet {
     BatchAnnotateImagesResponse batchResponse = client.batchAnnotateImages(requests);
     client.close();
 
-    List<AnnotateImageResponse> imageResponses = batchResponse.getResponsesList();
+    AnnotateImageResponse imageResponse = batchResponse.getResponsesList().get(0);
 
-    System.out.println("imageResponses size" + imageResponses.size())
-    for (AnnotateImageResponse res : imageResponses) {
-      if (res.hasError()) {
-        // If any response has error
+    if (imageResponse.hasError()) {
+        // If response has error
         return null;
-      } 
-    }  
+    } 
 
-    // Print out text in image
-    TextAnnotation annotation = imageResponses.get(0).getFullTextAnnotation();
+    // Otherwise, print out text in image
+    TextAnnotation annotation = imageResponse.getFullTextAnnotation();
     out.println("<br/><br/><div charset=\"UTF-8\" id=\"original\">");
     out.println("<br/>" + annotation.getText().replace("\n", "<br/>"));
     out.println("</div>");

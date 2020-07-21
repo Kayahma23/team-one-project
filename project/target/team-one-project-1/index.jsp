@@ -53,11 +53,6 @@ limitations under the License.
     <!-- form for picture upload -->
     <form method="POST" enctype="multipart/form-data" action="<%= uploadUrl %>">
       <p>Upload an image:</p>
-      <!-- <input type="file"> -->
-      <!-- <div>
-        <label for="files" class="button1">Select Image</label>
-        <input name="image" style="visibility:hidden;" type="file">
-      </div> -->
       <div class="fileButton">
         <label for="file-input">Pick a file</label>
         <input type="file" name="image" id="file-input">
