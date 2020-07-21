@@ -13,6 +13,9 @@
 // limitations under the License.
 
 package com.google.sps.servlets;
+import com.google.cloud.translate.Translate;
+import com.google.cloud.translate.TranslateOptions;
+import com.google.cloud.translate.Translation;
 import com.google.appengine.api.blobstore.BlobInfo;
 import com.google.appengine.api.blobstore.BlobInfoFactory;
 import com.google.appengine.api.blobstore.BlobKey;
@@ -51,6 +54,7 @@ public class FormHandlerServlet extends HttpServlet {
 
   // Stores the image's url and image's text to use between get and post methods
   BlobKey blobKey = null;
+  String langCode = "en";
 
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -65,6 +69,10 @@ public class FormHandlerServlet extends HttpServlet {
       return;
     }
 
+    // Get the request parameters.
+    // error check this
+    langCode = request.getParameter("language");
+
     // Redirect back to main page
     response.sendRedirect("/index.jsp");
   }
@@ -75,7 +83,7 @@ public class FormHandlerServlet extends HttpServlet {
         // Set content type and character encoding and instantiate output stream
         response.setContentType("text/html; charset=UTF-8");
         response.setCharacterEncoding("UTF-8");
-        ServletOutputStream out = response.getOutputStream();
+        PrintWriter out = response.getWriter();
 
 
         // Print out image uploaded and link its own url (upon clicking it, the image will open up)        
@@ -85,13 +93,25 @@ public class FormHandlerServlet extends HttpServlet {
         out.println("<a class=\"imageContent\" href=\"" + imageUrl + "\">");
         out.println("<img src=\"" + imageUrl + "\" /></a>");
 
-        // // Get and store the text in the image
+        // // Get and print the text in the image
         byte[] blobBytes = getBlobBytes(blobKey);
-        
-        if (getImageText(blobBytes, out) == null) {
+        String imageText = getImageText(blobBytes, out);
+        if (imageText == null) {
             // If an error arises while parsing text from image
             out.println("Error grabbing text from image.");
+            return;
         }
+
+        // Do the translation.
+        Translate translate = TranslateOptions.getDefaultInstance().getService();
+        Translation translation = 
+            translate.translate(imageText, Translate.TranslateOption.targetLanguage(langCode));
+        String translatedText = translation.getTranslatedText();
+
+        // Output the translation.
+        out.println("<div id=\"translation\">");
+        out.println(translatedText);
+        out.println("</div>");
     }
   }
 
@@ -169,7 +189,7 @@ public class FormHandlerServlet extends HttpServlet {
    * Uses the Google Cloud Vision API to generate the text in the image
    * represented by the binary data stored in imgBytes.
    */
-  private String getImageText(byte[] imgBytes, ServletOutputStream out) throws IOException {
+  private String getImageText(byte[] imgBytes, PrintWriter out) throws IOException {
     // Get byte string and make the image, feature and request instances
     ByteString byteString = ByteString.copyFrom(imgBytes);
     Image image = Image.newBuilder().setContent(byteString).build();
@@ -189,17 +209,18 @@ public class FormHandlerServlet extends HttpServlet {
       if (res.hasError()) {
         // If response has error
         return null;
-      } else {
-        // Print out the text in the image
-        for (int i = 0; i < imageResponses.size(); i++) {
-         TextAnnotation annotation = imageResponses.get(i).getFullTextAnnotation();
-         out.println("<div charset=\"UTF-8\" id=\"textFromImage\">");
+      } 
+       
+    }  
+    // Print out the text in the image
+        // for (int i = 0; i < imageResponses.size(); i++) {
+         TextAnnotation annotation = imageResponses.get(0).getFullTextAnnotation();
+         out.println("<br/><br/><div charset=\"UTF-8\" id=\"original\">");
          out.println("<br/>" + annotation.getText().replace("\n", "<br/>"));
          out.println("</div>");
-        }
-      }
-    }   
-    return "OK";
+        
+        // } 
+    return annotation.getText().replace("\n", "<br/>").replaceAll("&#39;","'");
   }
 
 }
