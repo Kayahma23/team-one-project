@@ -22,7 +22,7 @@ body {
   position:relative;
   z-index:2;
   font-family: 'Carter One', cursive;
-  
+
 }
 
 .jumbotron-background {
@@ -50,4 +50,4 @@ img.blur {
 .button1:hover {
   background-color: #555555;
   color: rgb(253, 238, 255);
-}
+} 
