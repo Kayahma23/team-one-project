@@ -28,7 +28,7 @@ limitations under the License.
     <title>Team one project</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link href="https://fonts.googleapis.com/css2?family=Carter+One&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Carter+One&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -38,9 +38,7 @@ limitations under the License.
   </head>
   <body onload="getPicture()">
       <div class="jumbotron">
-        <div class="jumbotron-background">
-            <img src="images/languagesgood.png" class="blur">
-        </div>
+        <div class="jumbotron-bg"></div>
         <div class="container">
             <center>  
             <h1 class="display-4">Translate Your Image Text</h1>
