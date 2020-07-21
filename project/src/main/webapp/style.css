@@ -62,9 +62,11 @@ body {
 
 .fileButton { position: relative; height: 30px; width: 100px; }
 .fileButton > input[type="file"] { position: absoulte; opacity: 0; top: 0; left: 0; right: 0; bottom: 0 }
-.fileButton > label {background-color:rgb(255, 255, 255);
+.fileButton > label {
+  background-color:rgb(255, 255, 255);
   color: black;
   padding: 5px 12px;
   border: 2px solid #555555;
   cursor: pointer;
-  border-radius: 6px; }
+  border-radius: 6px;
+}
