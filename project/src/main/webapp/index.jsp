@@ -37,13 +37,10 @@ limitations under the License.
     <script src="script.js"></script>
   </head>
   <body onload="getPicture()">
-
-       <div class="jumbotron">
-        
+      <div class="jumbotron">
         <div class="jumbotron-background">
             <img src="images/languagesgood.png" class="blur">
         </div>
-
         <div class="container">
             <center>  
             <h1 class="display-4">Translate Your Image Text</h1>
@@ -51,15 +48,11 @@ limitations under the License.
             <hr class="my-4">
             <p>Google Software Product Sprint Summer 2020</p>
             </center>
-
-       </div> 
+        </div> 
       </div>
-    <center>
+      <center>
     <!-- form for picture upload -->
     <form method="POST" enctype="multipart/form-data" action="<%= uploadUrl %>">
-      <p>Type some text:</p>
-      <textarea name="message"></textarea>
-      <br/>
       <p>Upload an image:</p>
       <input type="file" name="image">
       <br/><br/>
@@ -73,15 +66,9 @@ limitations under the License.
      <option value="en">English</option>
      <option value="es">Spanish</option>
      <option value="hi">Hindi</option>
-     <option value="pt">Portuguese</option>
-     <option value="it">Italian</option>
-     <option value="fr">French</option>
-     <option value="ht">Creole</option>
-     <option value="he">Hebrew</option>
-     <option value="ja">Japanese</option>
     </select>
     <br></br>
     <div id="result"></div>
     </center>
   </body>
-</html>
+</html> 
