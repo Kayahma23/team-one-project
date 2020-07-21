@@ -54,3 +54,7 @@ img.blur {
   background-color: #555555;
   color: rgb(253, 238, 255);
 }
+
+#picture {
+    float:right;
+}
