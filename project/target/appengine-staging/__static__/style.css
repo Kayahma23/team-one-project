@@ -9,7 +9,6 @@
 
 }
 
-
 body {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
@@ -25,7 +24,6 @@ body {
   position:relative;
   z-index:2;
   font-family: 'Carter One', cursive;
-  
 }
 
 .jumbotron-background {
@@ -53,9 +51,21 @@ img.blur {
 .button1:hover {
   background-color: #555555;
   color: rgb(253, 238, 255);
-}
+} 
 
 #picture {
-    float:right;
-    
+  float:right;
 }
+
+/* #preview{
+ width: 100px;
+ height: 100px;
+ margin: 0 auto;
+ border: 1px solid gray;
+ border-radius: 3px;
+}
+
+#prev_img{
+ display: none;
+}
+*/
