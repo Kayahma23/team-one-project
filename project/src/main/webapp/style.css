@@ -15,7 +15,9 @@ body {
   position:relative;
   z-index:2;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-  font-weight: 300;
+  font-weight: 400;
+  color: black;
+  
 }
 
 .jumbotron .jumbotron-bg {
@@ -28,26 +30,30 @@ body {
     background-position: 0% 25%;
     background-size: cover;
     background-repeat: no-repeat;
-    -webkit-filter: blur(4px);
-    -moz-filter: blur(4px);
-    -o-filter: blur(4px);
-    -ms-filter: blur(4px);
-    filter: blur(4px);
+    -webkit-filter: blur(6px);
+    -moz-filter: blur(6px);
+    -o-filter: blur(6px);
+    -ms-filter: blur(6px);
+    filter: blur(6px);
     z-index: -1;
 }
 
-.button1 {
-  background-color:rgb(255, 255, 255);
+.mainButtons {
+  position: relative; 
+  height: 40px; 
+  width: 150px;
+  background-color: #F0FFFF;
   color: black;
-  padding: 5px 12px;
-  border: 2px solid #555555;
+  padding: 5px 5px;
+  border: 2px solid;
   cursor: pointer;
-  border-radius: 6px;
+  border-radius: 2px;
+  border-color: #00BFFF;
+  margin: 10px 10px 10px 10px;
 }
 
-.button1:hover {
-  background-color: #555555;
-  color: rgb(255, 255, 255);
+.mainButtons:selected {
+  border: none;
 } 
 
 /* .imageContent {
@@ -60,13 +66,83 @@ body {
     margin: 10px;
 } */
 
-.fileButton { position: relative; height: 30px; width: 100px; }
-.fileButton > input[type="file"] { position: absoulte; opacity: 0; top: 0; left: 0; right: 0; bottom: 0 }
+.fileButton { 
+    position: relative;
+    margin: 10px 0px 10px 10px; 
+    overflow: hidden;
+}
+.fileButton > input[type="file"] { 
+    position: absoulte; 
+    /* opacity: 100; 
+    top: 0; 
+    left: 0; 
+    right: 0;
+    bottom: 0;
+    color:black; */
+    display: none;
+}
 .fileButton > label {
-  background-color:rgb(255, 255, 255);
-  color: black;
-  padding: 5px 12px;
-  border: 2px solid #555555;
-  cursor: pointer;
-  border-radius: 6px;
+    /* position: absolute; */
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    font-weight: 300;
+    background-color:#F0FFFF;
+    /* background-size: 100%; */
+    color: black;
+    padding: 7px 5px;
+    border: 2px solid;
+    cursor: pointer;
+    border-radius: 2px;
+    border-color: #00BFFF;
+    height: 40px; 
+    width: 150px;
+    margin-right: 10px;
+    /* vertical-align: middle; */
+    
+}
+
+.fileButton > label:selected {
+    border: none;
+}
+
+.buttonCol {
+    /* align-content: center; */
+  /* width: 33.33%; */
+  float: left;
+}
+
+/* Clear floats after the columns */
+.buttonRow {
+    display:inline-table;
+    text-align: center;
+    /* align-items: center; */
+    height: auto;
+  /* content: ""; */
+  /* display: table; */
+  /* float: center; */
+  /* clear: both; */
+}
+
+option:checked { 
+    display:none; 
+}
+
+/* #checkmark {
+    display: inline;
+    padding: 5px 5px 5px 5px;
+    margin: 0px 0px 0px 0px;
+} */
+
+.selectButton {
+    text-align-last:center;
+    position: relative; 
+    height: 40px; 
+    width: 150px;
+    background-color: #F0FFFF;
+    color: black;
+    padding: 7px 5px;
+    border: 2px solid;
+    cursor: pointer;
+    border-radius: 2px;
+    border-color: #00BFFF;
+    margin: 10px 10px 10px 10px;
 }

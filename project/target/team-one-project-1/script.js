@@ -54,7 +54,7 @@ function getPicture() {
   fetch('/my-form-handler').then((response) => {
         return response.text();
       })
-      .then(addToPage).then(getTranslation);
+      .then(addToPage);
 }
 
 /**
@@ -64,3 +64,17 @@ function addToPage(response) {
     const picContainer = document.getElementById('picture');
     picContainer.innerHTML = response;
 }
+
+/**
+ * Shows green check.
+ */
+// function showCheck() {
+//     document.getElementById("checkmark").style.display = "block";
+// }
+
+/**
+ * Hides green check.
+ */
+// function hideCheck() {
+//     document.getElementById("checkmark").style.display = "none";
+// }
