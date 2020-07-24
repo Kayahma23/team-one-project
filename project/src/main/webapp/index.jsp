@@ -42,12 +42,12 @@ limitations under the License.
         <div class="container">
             <center>  
             <h1 class="display-4">PicReader</h1>
-            <h2><p>Upload your image. Choose your language. Translate its text.</p></h2>
-            <hr class="my-4">
+            <!-- <hr class="my-4"> -->
             <p>Google Software Product Sprint Summer 2020</p>
             </center>
         </div> 
       </div>
+    <center><h3>Upload your image. Choose your language. Translate its text.</h3></center>
     <!-- form for picture upload -->
     <form method="POST" enctype="multipart/form-data" action="<%= uploadUrl %>">
     <center>

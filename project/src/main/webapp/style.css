@@ -2,6 +2,7 @@ body {
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
     font-weight: 300;
     background-color: rgb(255, 255, 255);
+    color:black;
 }
 
 .jumbotron {
@@ -41,7 +42,7 @@ body {
 .mainButtons {
   position: relative; 
   height: 40px; 
-  width: 150px;
+  width: 140px;
   background-color: #F0FFFF;
   color: black;
   padding: 5px 5px;
@@ -94,7 +95,7 @@ body {
     border-radius: 2px;
     border-color: #00BFFF;
     height: 40px; 
-    width: 150px;
+    width: 140px;
     margin-right: 10px;
     /* vertical-align: middle; */
     
