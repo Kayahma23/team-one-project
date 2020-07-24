@@ -41,8 +41,8 @@ body {
 
 .mainButtons {
   position: relative; 
-  height: 40px; 
-  width: 140px;
+  height: 39px; 
+  width: 130px;
   background-color: #F0FFFF;
   color: black;
   padding: 5px 5px;
@@ -94,8 +94,8 @@ body {
     cursor: pointer;
     border-radius: 2px;
     border-color: #00BFFF;
-    height: 40px; 
-    width: 140px;
+    height: 39px; 
+    width: 130px;
     margin-right: 10px;
     /* vertical-align: middle; */
     
@@ -136,8 +136,8 @@ option:checked {
 .selectButton {
     text-align-last:center;
     position: relative; 
-    height: 40px; 
-    width: 150px;
+    height: 39px; 
+    width: 130px;
     background-color: #F0FFFF;
     color: black;
     padding: 7px 5px;

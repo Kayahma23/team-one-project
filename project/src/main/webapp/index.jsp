@@ -64,6 +64,7 @@ limitations under the License.
     <!-- <select class="button1" id="language" onchange="getTranslation(this);"> -->
       <div class="buttonCol">
         <select class="selectButton" name="language" id="language">
+        <option value="en" selected>Choose language</option>
         <option value="en">English</option>
         <option value="es">Spanish</option>
         <option value="hi">Hindi</option>
