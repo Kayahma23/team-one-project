@@ -18,11 +18,12 @@ body {
 }
 
 .jumbotron .app-title {
-  font-family: "HelveticaNeue-Bold", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", serif; 
-  font-size: 100px;
-  font-weight: 600;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", serif; 
+  font-size: 130px;
+  font-weight: 700;
   font-stretch: extra-expanded;
   color: black;
+  line-height: 90%;
 }
 
 .jumbotron .jumbotron-bg {
@@ -46,7 +47,7 @@ body {
 .mainButtons {
   position: relative; 
   height: 35px; 
-  width: 80px;
+  width: 70px;
   background-color: #F0FFFF;
   color: black;
   padding: 5px 5px;
@@ -130,11 +131,12 @@ option:checked {
     display:none; 
 }
 
-/* #checkmark {
-    display: inline;
-    padding: 5px 5px 5px 5px;
-    margin: 0px 0px 0px 0px;
-} */
+#checkmark {
+    display: none;
+    /* padding-top: 6px; */
+    position:relative;
+    margin-top: 13px;
+}
 
 .selectButton {
     text-align-last:center;
@@ -149,4 +151,11 @@ option:checked {
     border-radius: 2px;
     border-color: #00BFFF;
     margin: 10px 10px 10px 10px;
+}
+
+@keyframes fade-in {
+  0%   {opacity: 0;}
+  25%  {opacity: 25;}
+  50%  {opacity: 50;}
+  100% {opacity: 100;}
 }

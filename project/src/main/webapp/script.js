@@ -68,9 +68,9 @@ function addToPage(response) {
 /**
  * Shows green check.
  */
-// function showCheck() {
-//     document.getElementById("checkmark").style.display = "block";
-// }
+function showCheck() {
+    document.getElementById("checkmark").style.display = "block";
+}
 
 /**
  * Hides green check.

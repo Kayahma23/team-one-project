@@ -59,9 +59,9 @@ limitations under the License.
             <label for="file-input">Upload image</label><input type="file" name="image" id="file-input" onchange="showCheck()">
         </div>
       </div>
-      <!-- <div class="buttonCol"> 
-          <img id="checkmark" src="images/blackCheck.png" width="25" height="20">
-      </div> -->
+      <div class="buttonCol"> 
+          <img id="checkmark" src="images/lightGreenCheck.png" width="27" height="25">
+      </div>
     <!-- <select class="button1" id="language" onchange="getTranslation(this);"> -->
       <div class="buttonCol">
         <select class="selectButton" name="language" id="language">
