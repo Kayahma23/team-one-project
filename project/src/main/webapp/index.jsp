@@ -39,15 +39,16 @@ limitations under the License.
   <body onload="getPicture()">
       <div class="jumbotron">
         <div class="jumbotron-bg"></div>
-        <div class="container">
-            <center>  
-            <h1 class="display-4">PicReader</h1>
-            <!-- <hr class="my-4"> -->
-            <p>Google Software Product Sprint Summer 2020</p>
-            </center>
+            <div class="container">
+                <center>  
+                <h1 class="app-title">PicReader</h1>
+                <!-- <hr class="my-4"> -->
+                <p>Google Software Product Sprint Summer 2020</p>
+                </center>
+            </div>
         </div> 
       </div>
-    <center><h3>Upload your image. Choose your language. Translate its text.</h3></center>
+    <center><p>Upload your image. Choose your language. Translate its text.</p></center>
     <!-- form for picture upload -->
     <form method="POST" enctype="multipart/form-data" action="<%= uploadUrl %>">
     <center>

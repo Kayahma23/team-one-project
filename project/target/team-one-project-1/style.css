@@ -15,10 +15,14 @@ body {
 .jumbotron .container {
   position:relative;
   z-index:2;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-  font-weight: 400;
+}
+
+.jumbotron .app-title {
+  font-family: "HelveticaNeue-Bold", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", serif; 
+  font-size: 100px;
+  font-weight: 600;
+  font-stretch: extra-expanded;
   color: black;
-  
 }
 
 .jumbotron .jumbotron-bg {
@@ -27,28 +31,28 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url(images/languagesgood.png);
+    background-image: url(images/test-background.png);
     background-position: 0% 25%;
     background-size: cover;
     background-repeat: no-repeat;
-    -webkit-filter: blur(6px);
-    -moz-filter: blur(6px);
-    -o-filter: blur(6px);
-    -ms-filter: blur(6px);
-    filter: blur(6px);
+    -webkit-filter: blur(4px);
+    -moz-filter: blur(4px);
+    -o-filter: blur(4px);
+    -ms-filter: blur(4px);
+    filter: blur(4px);
     z-index: -1;
 }
 
 .mainButtons {
   position: relative; 
-  height: 40px; 
-  width: 140px;
+  height: 35px; 
+  width: 80px;
   background-color: #F0FFFF;
   color: black;
   padding: 5px 5px;
   border: 2px solid;
   cursor: pointer;
-  border-radius: 2px;
+  border-radius: 3px;
   border-color: #00BFFF;
   margin: 10px 10px 10px 10px;
 }
@@ -74,12 +78,11 @@ body {
 }
 .fileButton > input[type="file"] { 
     position: absoulte; 
-    /* opacity: 100; 
+    opacity: 0; 
     top: 0; 
     left: 0; 
     right: 0;
     bottom: 0;
-    color:black; */
     display: none;
 }
 .fileButton > label {
@@ -89,13 +92,13 @@ body {
     background-color:#F0FFFF;
     /* background-size: 100%; */
     color: black;
-    padding: 7px 5px;
+    padding: 5px 5px;
     border: 2px solid;
     cursor: pointer;
     border-radius: 2px;
     border-color: #00BFFF;
-    height: 40px; 
-    width: 140px;
+    height: 35px; 
+    width: 110px;
     margin-right: 10px;
     /* vertical-align: middle; */
     
@@ -136,11 +139,11 @@ option:checked {
 .selectButton {
     text-align-last:center;
     position: relative; 
-    height: 40px; 
-    width: 150px;
+    height: 35px; 
+    width: 140px;
     background-color: #F0FFFF;
     color: black;
-    padding: 7px 5px;
+    padding: 6px 5px;
     border: 2px solid;
     cursor: pointer;
     border-radius: 2px;
