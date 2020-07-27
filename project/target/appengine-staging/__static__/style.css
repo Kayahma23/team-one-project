@@ -1,0 +1,91 @@
+body {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    font-weight: 300;
+    background-color: rgb(255, 255, 255);
+}
+
+.jumbotron {
+  position:relative;
+  overflow:hidden;
+  background: none;
+  max-height: 250px; 
+}
+
+.jumbotron .container {
+  position:relative;
+  z-index:2;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 300;
+}
+
+.jumbotron .jumbotron-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(images/languagesgood.png);
+    background-position: 0% 25%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-filter: blur(4px);
+    -moz-filter: blur(4px);
+    -o-filter: blur(4px);
+    -ms-filter: blur(4px);
+    filter: blur(4px);
+    z-index: -1;
+}
+
+.button1 {
+  background-color:rgb(255, 255, 255);
+  color: black;
+  padding: 5px 12px;
+  border: 2px solid #555555;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.button1:hover {
+  background-color: #555555;
+  color: rgb(255, 255, 255);
+} 
+
+/* .imageContent {
+    float: left;
+    margin: 10px;
+}
+#textFromImage {
+    float: left;
+    margin: 10px;
+} */
+
+.fileButton { position: relative; height: 30px; width: 100px; }
+.fileButton > input[type="file"] { position: absoulte; opacity: 0; top: 0; left: 0; right: 0; bottom: 0 }
+.fileButton > label {
+  background-color:rgb(255, 255, 255);
+  color: black;
+  padding: 5px 12px;
+  border: 2px solid #555555;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.col1-color {
+  float: left;
+  width: 50%;
+}
+
+.col2-color {
+  float: left;
+  width: 50%;
+}
+
+.rowbuttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.fileButton, .select-button, .submit-button{
+    align-content: space-around;
+}
