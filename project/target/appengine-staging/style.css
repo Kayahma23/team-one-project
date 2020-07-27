@@ -1,0 +1,122 @@
+body {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    font-weight: 300;
+    background-color: rgb(255, 255, 255);
+}
+
+.jumbotron {
+  position:relative;
+  overflow:hidden;
+  background: none;
+  max-height: 250px; 
+}
+
+.jumbotron .container {
+  position:relative;
+  z-index:2;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 300;
+}
+
+.jumbotron .jumbotron-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(images/languagesgood.png);
+    background-position: 0% 25%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    -webkit-filter: blur(4px);
+    -moz-filter: blur(4px);
+    -o-filter: blur(4px);
+    -ms-filter: blur(4px);
+    filter: blur(4px);
+    z-index: -1;
+}
+
+.mainButtons {
+  position: relative; 
+  height: 40px; 
+  width: 200px;
+  background-color: #F0FFFF;
+  color: black;
+  padding: 5px 12px;
+  border: 2px solid #555555;
+  cursor: pointer;
+  border-radius: 2px;
+  border-color: #00BFFF;
+  margin: 10px 10px 10px 10px;
+}
+
+.mainButtons:selected {
+  border: none;
+} 
+
+/* .imageContent {
+    float: left;
+    margin: 10px;
+}
+
+#textFromImage {
+    float: left;
+    margin: 10px;
+} */
+
+.fileButton { 
+    position: relative; 
+    height: 40px; 
+    width: 200px; 
+}
+.fileButton > input[type="file"] { 
+    position: absoulte; 
+    opacity: 0; 
+    top: 0; 
+    left: 0; 
+    right: 0;
+    bottom: 0;
+}
+.fileButton > label {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    font-weight: 300;
+    background-color:#F0FFFF;
+    color: black;
+    padding: 5px 12px;
+    border: 2px solid #555555;
+    cursor: pointer;
+    border-radius: 2px;
+    border-color: #00BFFF;
+    margin: 10px 10px 10px 10px;
+}
+
+.fileButton > label:selected {
+    border: none;
+}
+
+.buttonCol {
+    /* align-content: center; */
+  /* width: 33.33%; */
+  float: left;
+}
+
+/* Clear floats after the columns */
+.buttonRow {
+    display:inline-table;
+    width: auto;
+    text-align: center;
+    /* align-items: center; */
+    height: auto;
+  /* content: ""; */
+  /* display: table; */
+  /* float: center; */
+  /* clear: both; */
+}
+
+select { 
+    text-align-last:center; 
+}
+
+#checkmark {
+    display: none;
+}
