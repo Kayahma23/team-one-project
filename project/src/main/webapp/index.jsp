@@ -25,7 +25,7 @@ limitations under the License.
     <title>Team one project</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link href="https://fonts.googleapis.com/css2?family=Carter+One&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Carter+One&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -35,9 +35,7 @@ limitations under the License.
   </head>
   <body onload="getPicture()">
       <div class="jumbotron">
-        <div class="jumbotron-background">
-            <img src="images/languagesgood.png" class="blur">
-        </div>
+        <div class="jumbotron-bg"></div>
         <div class="container">
             <center>  
             <h1 class="display-4">Translate Your Image Text</h1>
@@ -46,34 +44,23 @@ limitations under the License.
             <p>Google Software Product Sprint Summer 2020</p>
             </center>
         </div> 
-        
+      </div>
       <center>
-    <!-- form for picture upload -->
-<!--
-    <form  method="POST" enctype="multipart/form-data" action="<%= uploadUrl %>">
-      <p>Type some text:</p>
-      <textarea name="message"></textarea>
-      <br/>
--->
-
-    <form method="POST" enctype="multipart/form-data" action="<%= uploadUrl %>">
-
-      <p>Upload an image:</p>
-     <!-- <div id="preview"><img src="" id="prev_img" width="100%" height='100%'></div> -->
-      <input type="file" name="image">
       
-     <!--  Width: <span id='width'></span><br/>
-       Height: <span id='height'></span>
+    <!-- form for picture upload -->
+    <form method="POST" enctype="multipart/form-data" action="<%= uploadUrl %>">
+      <p>Upload an image:</p>
+      <input type="file" name="image">
       <br/><br/>
-      -->
       <button class="button1">Submit</button>
     </form>
     <div id="picture"></div>
 
+
     <!-- translation selector  -->
     <p>Select language to translate text</p>
     <select class="button1" id="language" onchange="getTranslation(this);">
-     <option value="en">English</option>
+       <option value="en">English</option>
      <option value="es">Spanish</option>
      <option value="hi">Hindi</option>
      <option value="pt">Portuguese</option>
@@ -89,9 +76,19 @@ limitations under the License.
      <option value="pa">Punjabi</option>
      <option value="ru">Russian</option>
      <option value="vi">Vietnamese</option>
+     <option value="ko">Korean</option>
     </select>
     <br></br>
     <div id="result"></div>
     </center>
+    <span class="moji">
+        <span id="bit">
+        <a href="https://github.com/alexrodriguez0" target="_blank"><img src="images/A-Img.png" alt="Alex Img" id=Alex>
+      
+        <a href="https://github.com/Kayahma23" target="_blank"><img src="images/K-Img.png" alt="Kay Img"  id=Kay> 
+   
+        <a href="https://github.com/IsabellaRC" target="_blank"><img src="images/I-Img.png" alt="Isa Img"  id=Isa> 
+        </span>
+    </span>
   </body>
 </html> 
