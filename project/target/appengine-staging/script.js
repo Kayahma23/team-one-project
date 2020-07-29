@@ -54,7 +54,7 @@ function getPicture() {
   fetch('/my-form-handler').then((response) => {
         return response.text();
       })
-      .then(addToPage);
+      .then(addToPage).then(getTranslation);
 }
 
 /**
@@ -75,6 +75,6 @@ function showCheck() {
 /**
  * Hides green check.
  */
-function hideCheck() {
-    document.getElementById("checkmark").style.display = "none";
-}
+// function hideCheck() {
+//     document.getElementById("checkmark").style.display = "none";
+// }

@@ -1,12 +1,9 @@
 <%--
 Copyright 2019 Google LLC
-
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
-
     https://www.apache.org/licenses/LICENSE-2.0
-
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -25,7 +22,6 @@ limitations under the License.
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Team one project</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- <link href="https://fonts.googleapis.com/css2?family=Carter+One&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet"> -->
@@ -40,37 +36,42 @@ limitations under the License.
   <body onload="getPicture()">
       <div class="jumbotron">
         <div class="jumbotron-bg"></div>
-        <div class="container">
-            <center>  
-            <h1 class="display-4">Translate Your Image Text</h1>
-            <h2><p>Upload your image. Choose your language. Translate its text.</p></h2>
-            <hr class="my-4">
-            <p>Google Software Product Sprint Summer 2020</p>
-            </center>
+
+            <div class="container">
+                <center>  
+                <h1 class="app-title">PicReader</h1>
+                <!-- <hr class="my-4"> -->
+                <p>Google Software Product Sprint Summer 2020</p>
+                </center>
+            </div>
         </div> 
       </div>
+    <center><p>Upload your image. Choose your language. Translate its text.</p></center>
     <!-- form for picture upload -->
     <form method="POST" enctype="multipart/form-data" action="<%= uploadUrl %>">
     <center>
     <div class="buttonRow">
       <div class="buttonCol">
         <div class="fileButton">
-            <label for="file-input">Upload image</label>
-            <input type="file" name="image" id="file-input">
-            <!-- <img id="checkmark" src="check.png" width="15" height="15"> -->
+            <!-- <center> -->
+            <label for="file-input">Upload image</label><input type="file" name="image" id="file-input" onchange="showCheck()">
         </div>
       </div>
+      <div class="buttonCol"> 
+          <img id="checkmark" src="images/lightGreenCheck.png" width="27" height="25">
+      </div>
     <!-- <select class="button1" id="language" onchange="getTranslation(this);"> -->
-        <div class="buttonCol">
-            <select class="mainButtons" name="language" id="language">
-            <option value="en">English</option>
-            <option value="es">Spanish</option>
-            <option value="hi">Hindi</option>
-            </select>
-        </div>
-        <div class="buttonCol">
-            <button class="mainButtons">Submit</button>
-        </div>
+      <div class="buttonCol">
+        <select class="selectButton" name="language" id="language">
+        <option value="en" selected>Choose language</option>
+        <option value="en">English</option>
+        <option value="es">Spanish</option>
+        <option value="hi">Hindi</option>
+        </select>
+      </div>
+      <div class="buttonCol">
+        <button class="mainButtons">Submit</button>
+      </div>
     </div>
     </center>
     </form>
