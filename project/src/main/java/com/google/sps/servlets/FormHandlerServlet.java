@@ -123,7 +123,6 @@ public class FormHandlerServlet extends HttpServlet {
         out.println("</div>");
         out.println("</div>");
         out.println("</center>");
-
     }
   }
 

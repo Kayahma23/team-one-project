@@ -64,3 +64,17 @@ function addToPage(response) {
     const picContainer = document.getElementById('picture');
     picContainer.innerHTML = response;
 }
+
+/**
+ * Shows green check.
+ */
+function showCheck() {
+    document.getElementById("checkmark").style.display = "block";
+}
+
+/**
+ * Hides green check.
+ */
+// function hideCheck() {
+//     document.getElementById("checkmark").style.display = "none";
+// }

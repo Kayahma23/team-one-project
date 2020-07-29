@@ -22,7 +22,6 @@ limitations under the License.
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Team one project</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- <link href="https://fonts.googleapis.com/css2?family=Carter+One&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet"> -->
@@ -37,42 +36,46 @@ limitations under the License.
   <body onload="getPicture()">
       <div class="jumbotron">
         <div class="jumbotron-bg"></div>
-        <div class="container">
-            <center>  
-            <h1 class="display-4">Translate Your Image Text</h1>
-            <h2><p>Upload your image. Choose your language. Translate its text.</p></h2>
-            <hr class="my-4">
-            <p>Google Software Product Sprint Summer 2020</p>
-            </center>
+
+            <div class="container">
+                <center>  
+                <h1 class="app-title">PicReader</h1>
+                <!-- <hr class="my-4"> -->
+                <p>Google Software Product Sprint Summer 2020</p>
+                </center>
+            </div>
         </div> 
       </div>
-      <!-- <center> -->
+    <center><p>Upload your image. Choose your language. Translate its text.</p></center>
     <!-- form for picture upload -->
     <form method="POST" enctype="multipart/form-data" action="<%= uploadUrl %>">
-      <p>Upload an image:</p>
-      <div class="rowbuttons">
-      <div class="fileButton">
-        <label for="file-input">Pick a file</label>
-        <input type="file" name="image" id="file-input">
+    <center>
+    <div class="buttonRow">
+      <div class="buttonCol">
+        <div class="fileButton">
+            <!-- <center> -->
+            <label for="file-input">Upload image</label><input type="file" name="image" id="file-input" onchange="showCheck()">
+        </div>
       </div>
-      <!-- translation selector  -->
-   <!-- <p>Select language to translate text</p> -->
+      <div class="buttonCol"> 
+          <img id="checkmark" src="images/lightGreenCheck.png" width="27" height="25">
+      </div>
     <!-- <select class="button1" id="language" onchange="getTranslation(this);"> -->
-        <div class="select-button">
-    <select class="button1" name="language" id="language">
-     <option value="en">English</option>
-     <option value="es">Spanish</option>
-     <option value="hi">Hindi</option>
-    </select>
+      <div class="buttonCol">
+        <select class="selectButton" name="language" id="language">
+        <option value="en" selected>Choose language</option>
+        <option value="en">English</option>
+        <option value="es">Spanish</option>
+        <option value="hi">Hindi</option>
+        </select>
+      </div>
+      <div class="buttonCol">
+        <button class="mainButtons">Submit</button>
+      </div>
     </div>
-    <!-- <div id="result"></div> -->
-    <div class="submit-button">
-      <button class="button1">Submit</button>
-      </div>
-      </div>
+    </center>
     </form>
     <div id="picture"></div>
     <div id="translation"></div>
-    <!-- </center> -->
   </body>
 </html> 
