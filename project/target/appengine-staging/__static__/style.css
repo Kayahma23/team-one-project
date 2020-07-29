@@ -2,6 +2,7 @@ body {
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
     font-weight: 300;
     background-color: rgb(255, 255, 255);
+    color:black;
 }
 
 .jumbotron {
@@ -14,8 +15,15 @@ body {
 .jumbotron .container {
   position:relative;
   z-index:2;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-  font-weight: 300;
+}
+
+.jumbotron .app-title {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", serif; 
+  font-size: 130px;
+  font-weight: 700;
+  font-stretch: extra-expanded;
+  color: black;
+  line-height: 90%;
 }
 
 .jumbotron .jumbotron-bg {
@@ -24,7 +32,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url(images/languagesgood.png);
+    background-image: url(images/test-background.png);
     background-position: 0% 25%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -38,14 +46,14 @@ body {
 
 .mainButtons {
   position: relative; 
-  height: 40px; 
-  width: 200px;
+  height: 35px; 
+  width: 70px;
   background-color: #F0FFFF;
   color: black;
-  padding: 5px 12px;
-  border: 2px solid #555555;
+  padding: 5px 5px;
+  border: 2px solid;
   cursor: pointer;
-  border-radius: 2px;
+  border-radius: 3px;
   border-color: #00BFFF;
   margin: 10px 10px 10px 10px;
 }
@@ -65,9 +73,9 @@ body {
 } */
 
 .fileButton { 
-    position: relative; 
-    height: 40px; 
-    width: 200px; 
+    position: relative;
+    margin: 10px 0px 10px 10px; 
+    overflow: hidden;
 }
 .fileButton > input[type="file"] { 
     position: absoulte; 
@@ -76,18 +84,25 @@ body {
     left: 0; 
     right: 0;
     bottom: 0;
+    display: none;
 }
 .fileButton > label {
+    /* position: absolute; */
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
     font-weight: 300;
     background-color:#F0FFFF;
+    /* background-size: 100%; */
     color: black;
-    padding: 5px 12px;
-    border: 2px solid #555555;
+    padding: 5px 5px;
+    border: 2px solid;
     cursor: pointer;
     border-radius: 2px;
     border-color: #00BFFF;
-    margin: 10px 10px 10px 10px;
+    height: 35px; 
+    width: 110px;
+    margin-right: 10px;
+    /* vertical-align: middle; */
+    
 }
 
 .fileButton > label:selected {
@@ -103,7 +118,6 @@ body {
 /* Clear floats after the columns */
 .buttonRow {
     display:inline-table;
-    width: auto;
     text-align: center;
     /* align-items: center; */
     height: auto;
@@ -113,10 +127,35 @@ body {
   /* clear: both; */
 }
 
-select { 
-    text-align-last:center; 
+option:checked { 
+    display:none; 
 }
 
 #checkmark {
     display: none;
+    /* padding-top: 6px; */
+    position:relative;
+    margin-top: 13px;
+}
+
+.selectButton {
+    text-align-last:center;
+    position: relative; 
+    height: 35px; 
+    width: 140px;
+    background-color: #F0FFFF;
+    color: black;
+    padding: 6px 5px;
+    border: 2px solid;
+    cursor: pointer;
+    border-radius: 2px;
+    border-color: #00BFFF;
+    margin: 10px 10px 10px 10px;
+}
+
+@keyframes fade-in {
+  0%   {opacity: 0;}
+  25%  {opacity: 25;}
+  50%  {opacity: 50;}
+  100% {opacity: 100;}
 }

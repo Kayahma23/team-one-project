@@ -78,3 +78,7 @@ function showCheck() {
 // function hideCheck() {
 //     document.getElementById("checkmark").style.display = "none";
 // }
+
+function refreshPage() {
+    
+}

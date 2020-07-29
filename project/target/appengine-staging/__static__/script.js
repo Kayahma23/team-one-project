@@ -75,6 +75,6 @@ function showCheck() {
 /**
  * Hides green check.
  */
-function hideCheck() {
-    document.getElementById("checkmark").style.display = "none";
-}
+// function hideCheck() {
+//     document.getElementById("checkmark").style.display = "none";
+// }

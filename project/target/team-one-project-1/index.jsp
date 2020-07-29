@@ -60,7 +60,7 @@ limitations under the License.
         </div>
       </div>
       <div class="buttonCol"> 
-          <img id="checkmark" src="images/lightGreenCheck.png" width="25" height="25">
+          <img id="checkmark" src="images/lightGreenCheck.png" width="27" height="25">
       </div>
     <!-- <select class="button1" id="language" onchange="getTranslation(this);"> -->
       <div class="buttonCol">

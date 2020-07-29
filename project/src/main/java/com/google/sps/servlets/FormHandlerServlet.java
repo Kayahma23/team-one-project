@@ -65,10 +65,11 @@ public class FormHandlerServlet extends HttpServlet {
 
     // User didn't upload a file, so render an error message.
     if (blobKey == null) {
-      out.println("Please upload an image file.");
+    //   out.println("Please upload an image file.");
       return;
     }
-
+    String imageUrl = getUploadedFileUrl(blobKey);
+    // request.setAttribute()
     // Get the request parameters.
     // error check this
     langCode = request.getParameter("language");
@@ -80,11 +81,11 @@ public class FormHandlerServlet extends HttpServlet {
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     if (blobKey != null) {
+
         // Set content type and character encoding and instantiate output stream
         response.setContentType("text/html; charset=UTF-8");
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
-
 
         // Print out image uploaded and link its own url (upon clicking it, the image will open up)        
         out.println("<p>Here's the image you uploaded:</p>");
