@@ -32,7 +32,13 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
+<<<<<<< HEAD
     background-image: url(images/test-background.png);
+=======
+
+    background-image: url(images/test-background.png);
+
+>>>>>>> 3d4a3b0693405db8d2a5d70057e5b9e3edf2888b
     background-position: 0% 25%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -58,6 +64,7 @@ body {
   margin: 10px 10px 10px 10px;
 }
 
+
 .mainButtons:selected {
   border: none;
 } 
@@ -71,6 +78,16 @@ body {
     float: left;
     margin: 10px;
 } */
+
+.col1-color {
+  float: left;
+  width: 50%;
+}
+
+.col2-color {
+  float: left;
+  width: 50%;
+}
 
 .fileButton { 
     position: relative;

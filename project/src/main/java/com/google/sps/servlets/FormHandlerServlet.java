@@ -86,13 +86,14 @@ public class FormHandlerServlet extends HttpServlet {
         response.setContentType("text/html; charset=UTF-8");
         response.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
-
-        // Print out image uploaded and link its own url (upon clicking it, the image will open up)        
+        // Print out image uploaded and link its own url (upon clicking it, the image will open up)
+        out.println("<center>");        
         out.println("<p>Here's the image you uploaded:</p>");
         String imageUrl = getUploadedFileUrl(blobKey);
         out.println("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">");
         out.println("<a class=\"imageContent\" href=\"" + imageUrl + "\">");
         out.println("<img src=\"" + imageUrl + "\" /></a>");
+        out.println("</center>");
 
         // // Get and print the text in the image
         byte[] blobBytes = getBlobBytes(blobKey);
@@ -110,9 +111,18 @@ public class FormHandlerServlet extends HttpServlet {
         String translatedText = translation.getTranslatedText();
 
         // Output the translation.
-        out.println("<div id=\"translation\">");
-        out.println(translatedText);
+        out.println("<center>");
+        out.println("<div class\"row\" >");
+        out.println("<div class=\"column col1-color col-sm-6\" >");
+        out.println("<h3>Original Text</h3>");
+        out.println("<p>"+ imageText + "</p>");
         out.println("</div>");
+        out.println("<div class=\"column col2-color col-sm-6\" id=\"translation\">");
+        out.println("<h3>Translated Text</h3>");
+        out.println("<p>"+ translatedText + "</p>");
+        out.println("</div>");
+        out.println("</div>");
+        out.println("</center>");
     }
   }
 
@@ -213,9 +223,9 @@ public class FormHandlerServlet extends HttpServlet {
 
     // Otherwise, print out text in image
     TextAnnotation annotation = imageResponse.getFullTextAnnotation();
-    out.println("<br/><br/><div charset=\"UTF-8\" id=\"original\">");
-    out.println("<br/>" + annotation.getText().replace("\n", "<br/>"));
-    out.println("</div>");
+    //out.println("<br/><br/><div charset=\"UTF-8\" id=\"original\">");
+    //out.println("<br/>" + annotation.getText().replace("\n", "<br/>"));
+    //out.println("</div>");
     return annotation.getText().replace("\n", "<br/>").replaceAll("&#39;","'");
   }
 
