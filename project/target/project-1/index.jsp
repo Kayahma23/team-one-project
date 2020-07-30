@@ -35,7 +35,7 @@ limitations under the License.
     <script src="script.js"></script>
   </head>
 
-  <body onload="getPicture()">
+  <body onload="getPicture()" id="content">
       <header>
       <div class="jumbotron">
         <div class="jumbotron-bg"></div>
@@ -99,45 +99,48 @@ limitations under the License.
     <div id="translation"></div>
     </form>
  
-    <footer class="flex-rw">
-    <div id="bit">
-      <ul class="bullet"> 
-
-         <li> <img src="images/A-Img.png" alt="Alex Img" id="Alex"> </li>
-
-      <div id="float">
-
-            <li> <a class="fab fa-github-square" href="https://github.com/alexrodriguezev" style= "font-size: 2em"  target="_blank"></a> </li>
-            <li> <a class="fab fa-linkedin" href="https://www.linkedin.com/in/alexandra-rodriguez-evans/" style= "font-size: 2em"  target="_blank"></a> </li>
-      
-      </div>
-
-        </ul>
-      
-      <ul class="bullet"> 
-         <li> <img src="images/K-Img.png" alt="Kay Img"  id="Kay"> </li>
-
-      <div id="float">
-            
-            <li> <a href="https://github.com/Kayahma23" class="fab fa-github-square" style= "font-size: 2em" target="_blank" id="g"></a> </li>
-            <li> <a href="https://www.linkedin.com/in/kayahma-brown/"  class="fab fa-linkedin" style= "font-size: 2em"  target="_blank"></a> </li>
-            
-       </div>
-
-      </ul>
-   
-      <ul class="bullet"> 
-           <li ><img src="images/I-Img.png" alt="Isa Img"  id="Isa"> </li>
-        
-        <div id="float">
-            <li> <a href="https://github.com/IsabellaRC" class="fab fa-github-square" style= "font-size: 2em"  target="_blank"></a> </li>
-            <li> <a href="https://www.linkedin.com/in/isabella-rodriguez-cruz-00ba39194/"  class="fab fa-linkedin" style= "font-size: 2em"  target="_blank"></a> </li>
-        </div>
-
-      </ul>
-
-        </div>
-    </footer>
-
   </body>
+        <div  class="spacer"> . </div>
+        <footer id="bit">
+            <ul class="bullet"> 
+
+                <li> <img src="images/A-Img.png" alt="Alex Img" id="Alex"> </li>
+                <li class="name"><p>Alex Rodriguez</p> </li>
+
+                <div id="float">
+
+                    <li class="git"> <a class="fab fa-github-square" href="https://github.com/alexrodriguezev" style= "font-size: 2em"  target="_blank"></a> </li>
+                    <li class="linkedin"> <a class="fab fa-linkedin" href="https://www.linkedin.com/in/alexandra-rodriguez-evans/" style= "font-size: 2em"  target="_blank"></a> </li>
+            
+                </div>
+
+            </ul>
+            
+            <ul class="bullet"> 
+                <li> <img src="images/K-Img.png" alt="Kay Img"  id="Kay"> </li>
+                <li class="name"><p>Kayahma Brown</p> </li>
+
+                <div id="float">
+                    
+                    <li class="git"> <a href="https://github.com/Kayahma23" class="fab fa-github-square" style= "font-size: 2em" target="_blank" id="g"></a> </li>
+                    <li class="linkedin"> <a href="https://www.linkedin.com/in/kayahma-brown/"  class="fab fa-linkedin" style= "font-size: 2em"  target="_blank"></a> </li>
+                    
+                </div>
+
+            </ul>
+        
+            <ul class="bullet"> 
+                <li ><img src="images/I-Img.png" alt="Isa Img"  id="Isa"> </li>
+                <li class="name"><p>Isabella Rodriguez</p> </li>
+                
+                <div id="float">
+
+                    <li class="git"> <a href="https://github.com/IsabellaRC" class="fab fa-github-square" style= "font-size: 2em"  target="_blank"></a> </li>
+                    <li class="linkedin"> <a href="https://www.linkedin.com/in/isabella-rodriguez-cruz-00ba39194/"  class="fab fa-linkedin" style= "font-size: 2em"  target="_blank"></a> </li>
+               
+                </div>
+
+            </ul>
+
+        </footer>
 </html> 

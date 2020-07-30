@@ -6,19 +6,14 @@
 
 #greeting-container {
   margin-top: 20px;
-
 }
 
 body {
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-    font-weight: 300;
-    background-color: rgb(255, 255, 255);
-    color:black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 300;
+  background-color: rgb(255, 255, 255);
+  color:black;
 }
-
 
 .jumbotron {
   position:relative;
@@ -60,24 +55,21 @@ img.blur {
 }
 
 .jumbotron .jumbotron-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-
-    background-image: url(images/test-background.png);
-
-    background-position: 0% 25%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    -webkit-filter: blur(4px);
-    -moz-filter: blur(4px);
-    -o-filter: blur(4px);
-    -ms-filter: blur(4px);
-    filter: blur(4px);
-    z-index: -1;
-
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(images/test-background.png);
+  background-position: 0% 25%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-filter: blur(4px);
+  -moz-filter: blur(4px);
+  -o-filter: blur(4px);
+  -ms-filter: blur(4px);
+  filter: blur(4px);
+  z-index: -1;
 }
 
 .mainButtons {
@@ -95,50 +87,8 @@ img.blur {
 }
 
 .mainButtons:selected {
-    border: none;
+  border: none;
 } 
-
-#Alex{
-    border-radius: 100%;
-    max-width: 20%; 
-    max-height: 20%;
-   /*margin-right: 100px; */
- 
-}
-
-#Isa{
-    border-radius: 100%;
-    max-width: 20%; 
-    max-height: 20%;
-    /*margin-left: 550px; */
-  /*justify-content: flex-end; */
-}
-
-#Kay{
-    border-radius: 100%;
-    max-width: 20%; 
-    max-height: 20%;
-}
-
-#bit{
-    display:flex;
-    justify-content:space-around;
-    align-items: center;
-    padding-left: 250px;
-    /*padding-top: 35px;
-    padding-bottom:35px;
-    */
-}
-
-/* .imageContent {
-    float: left;
-    margin: 10px;
-}
-
-#textFromImage {
-    float: left;
-    margin: 10px;
-} */
 
 .col1-color {
   float: left;
@@ -151,84 +101,74 @@ img.blur {
 }
 
 .fileButton { 
-    position: relative;
-    margin: 10px 0px 10px 10px; 
-    overflow: hidden;
+  position: relative;
+  margin: 10px 0px 10px 10px; 
+  overflow: hidden;
 }
+
 .fileButton > input[type="file"] { 
-    position: absoulte; 
-    opacity: 0; 
-    top: 0; 
-    left: 0; 
-    right: 0;
-    bottom: 0;
-    display: none;
+  position: absoulte; 
+  opacity: 0; 
+  top: 0; 
+  left: 0; 
+  right: 0;
+  bottom: 0;
+  display: none;
 }
+
 .fileButton > label {
-    /* position: absolute; */
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-    font-weight: 300;
-    background-color:#F0FFFF;
-    /* background-size: 100%; */
-    color: black;
-    padding: 5px 5px;
-    border: 2px solid;
-    cursor: pointer;
-    border-radius: 2px;
-    border-color: #00BFFF;
-    height: 35px; 
-    width: 110px;
-    margin-right: 10px;
-    /* vertical-align: middle; */
-    
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 300;
+  background-color:#F0FFFF;
+  color: black;
+  padding: 5px 5px;
+  border: 2px solid;
+  cursor: pointer;
+  border-radius: 2px;
+  border-color: #00BFFF;
+  height: 35px; 
+  width: 110px;
+  margin-right: 10px;
 }
 
 .fileButton > label:selected {
-    border: none;
+  border: none;
 }
 
 .buttonCol {
-    /* align-content: center; */
-  /* width: 33.33%; */
   float: left;
 }
 
 /* Clear floats after the columns */
 .buttonRow {
-    display:inline-table;
-    text-align: center;
-    /* align-items: center; */
-    height: auto;
-  /* content: ""; */
-  /* display: table; */
-  /* float: center; */
-  /* clear: both; */
+  display:inline-table;
+  text-align: center;
+  height: auto;
 }
 
 option:checked { 
-    display:none; 
+  display:none; 
 }
 
 #checkmark {
-    display: none;
-    /* padding-top: 6px; */
-    position:relative;
-    margin-top: 13px;
+  display: none;
+  position:relative;
+  margin-top: 13px;
 }
 
 .selectButton {
-    text-align-last:center;
-    position: relative; 
-    height: 35px; 
-    width: 140px;
-    background-color: #F0FFFF;
-    color: black;
-    padding: 6px 5px;
-    border: 2px solid;
-    cursor: pointer;
-    border-radius: 2px;
-    border-color: #00BFFF;
-    margin: 10px 10px 10px 10px;
+  text-align-last:center;
+  position: relative; 
+  height: 35px; 
+  width: 140px;
+  background-color: #F0FFFF;
+  color: black;
+  padding: 6px 5px;
+  border: 2px solid;
+  cursor: pointer;
+  border-radius: 2px;
+  border-color: #00BFFF;
+  margin: 10px 10px 10px 10px;
 }
 
 @keyframes fade-in {
@@ -238,16 +178,39 @@ option:checked {
   100% {opacity: 100;}
 }
 
-footer {
- background: rgb(173,216,230);
-  /*margin-top: auto;*/
+ul.bullet{
+  list-style-type: none;
+}
+
+#Alex{
+  border-radius: 100%;
+  max-width: 20%; 
+  max-height: 20%;
+}
+
+#Isa{
+  border-radius: 100%;
+  max-width: 20%; 
+  max-height: 20%;
+}
+
+#Kay{
+  border-radius: 100%;
+  max-width: 20%; 
+  max-height: 20%;
+}
+
+#bit{
+  position: fixed;
+  background: rgb(173,216,230);
   bottom: 0;
   width: 100%;
   padding: 55px;
-}
-
-ul.bullet{
-    list-style-type: none;
+  display:flex;
+  justify-content:space-around;
+  align-items: center;
+  padding-left: 250px;
+  height: 20%;
 }
 
 #float li:hover ,
@@ -272,14 +235,24 @@ ul.bullet{
   transition: all 0.8s;
   display: inline-block;
 }
+
 html {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 center{
-    flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 
-float a{
-    margin-left: 30px;
+#float .git{
+  margin-left: 15px;
+}
+
+.spacer{
+  margin-bottom: 13%; /* how high is your footer */
+  visibility: hidden; 
+}
+
+.name{
+  font-weight: bold;
 }
