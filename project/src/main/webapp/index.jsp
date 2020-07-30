@@ -34,7 +34,9 @@ limitations under the License.
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
+
   <body onload="getPicture()">
+      <header>
       <div class="jumbotron">
         <div class="jumbotron-bg"></div>
 
@@ -47,10 +49,9 @@ limitations under the License.
             </div>
         </div> 
       </div>
-
-      <center>
+      </header>
+     <!-- <center> -->
       
-
     <center><p>Upload your image. Choose your language. Translate its text.</p></center>
 
     <!-- form for picture upload -->
@@ -73,6 +74,20 @@ limitations under the License.
         <option value="en">English</option>
         <option value="es">Spanish</option>
         <option value="hi">Hindi</option>
+        <option value="pt">Portuguese</option>
+        <option value="it">Italian</option>
+        <option value="fr">French</option>
+        <option value="ht">Creole</option>
+        <option value="he">Hebrew</option>
+        <option value="ja">Japanese</option>
+        <option value="ar">Arabic</option>
+        <option value="zh">Chinese(Simplified)</option>
+        <option value="nl">Dutch</option>
+        <option value="de">German</option>
+        <option value="pa">Punjabi</option>
+        <option value="ru">Russian</option>
+        <option value="vi">Vietnamese</option>
+        <option value="ko">Korean</option>
         </select>
       </div>
       <div class="buttonCol">
@@ -80,36 +95,10 @@ limitations under the License.
       </div>
     </div>
     </center>
-    </form>
     <div id="picture"></div>
-
-
-
-    <!-- translation selector  -->
-    <p>Select language to translate text</p>
-    <select class="button1" id="language" onchange="getTranslation(this);">
-       <option value="en">English</option>
-     <option value="es">Spanish</option>
-     <option value="hi">Hindi</option>
-     <option value="pt">Portuguese</option>
-     <option value="it">Italian</option>
-     <option value="fr">French</option>
-     <option value="ht">Creole</option>
-     <option value="he">Hebrew</option>
-     <option value="ja">Japanese</option>
-     <option value="ar">Arabic</option>
-     <option value="zh">Chinese(Simplified)</option>
-     <option value="nl">Dutch</option>
-     <option value="de">German</option>
-     <option value="pa">Punjabi</option>
-     <option value="ru">Russian</option>
-     <option value="vi">Vietnamese</option>
-     <option value="ko">Korean</option>
-    </select>
-    <br></br>
-    <div id="result"></div>
-    </center>
-
+    <div id="translation"></div>
+    </form>
+ 
     <footer class="flex-rw">
     <div id="bit">
       <ul class="bullet"> 
@@ -118,7 +107,7 @@ limitations under the License.
 
       <div id="float">
 
-            <li> <a class="fab fa-github-square" href="https://github.com/alexrodriguez0" style= "font-size: 2em"  target="_blank"></a> </li>
+            <li> <a class="fab fa-github-square" href="https://github.com/alexrodriguezev" style= "font-size: 2em"  target="_blank"></a> </li>
             <li> <a class="fab fa-linkedin" href="https://www.linkedin.com/in/alexandra-rodriguez-evans/" style= "font-size: 2em"  target="_blank"></a> </li>
       
       </div>
@@ -129,10 +118,10 @@ limitations under the License.
          <li> <img src="images/K-Img.png" alt="Kay Img"  id="Kay"> </li>
 
       <div id="float">
-
+            
             <li> <a href="https://github.com/Kayahma23" class="fab fa-github-square" style= "font-size: 2em" target="_blank" id="g"></a> </li>
             <li> <a href="https://www.linkedin.com/in/kayahma-brown/"  class="fab fa-linkedin" style= "font-size: 2em"  target="_blank"></a> </li>
-
+            
        </div>
 
       </ul>
@@ -149,7 +138,6 @@ limitations under the License.
 
         </div>
     </footer>
-    <div id="translation"></div>
 
   </body>
 </html> 
