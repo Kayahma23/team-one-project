@@ -37,6 +37,7 @@ limitations under the License.
   <body onload="getPicture()">
       <div class="jumbotron">
         <div class="jumbotron-bg"></div>
+
             <div class="container">
                 <center>  
                 <h1 class="app-title">PicReader</h1>

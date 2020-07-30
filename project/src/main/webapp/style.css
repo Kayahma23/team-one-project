@@ -62,7 +62,9 @@ img.blur {
     left: 0;
     right: 0;
     bottom: 0;
+
     background-image: url(images/test-background.png);
+
     background-position: 0% 25%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -88,6 +90,7 @@ img.blur {
   border-color: #00BFFF;
   margin: 10px 10px 10px 10px;
 }
+
 
 .mainButtons:selected {
   border: none;
@@ -134,6 +137,16 @@ img.blur {
     float: left;
     margin: 10px;
 } */
+
+.col1-color {
+  float: left;
+  width: 50%;
+}
+
+.col2-color {
+  float: left;
+  width: 50%;
+}
 
 .fileButton { 
     position: relative;

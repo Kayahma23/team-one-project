@@ -37,6 +37,7 @@ limitations under the License.
   <body onload="getPicture()">
       <div class="jumbotron">
         <div class="jumbotron-bg"></div>
+
             <div class="container">
                 <center>  
                 <h1 class="app-title">PicReader</h1>
@@ -118,7 +119,7 @@ limitations under the License.
       <div id="float">
 
             <li> <a class="fab fa-github-square" href="https://github.com/alexrodriguez0" style= "font-size: 2em"  target="_blank"></a> </li>
-            <li> <a class="fab fa-linkedin" href="https://prod.wbkidsgo.com/en/scooby-doo" style= "font-size: 2em"  target="_blank"></a> </li>
+            <li> <a class="fab fa-linkedin" href="https://www.linkedin.com/in/alexandra-rodriguez-evans/" style= "font-size: 2em"  target="_blank"></a> </li>
       
       </div>
 
@@ -141,7 +142,7 @@ limitations under the License.
         
         <div id="float">
             <li> <a href="https://github.com/IsabellaRC" class="fab fa-github-square" style= "font-size: 2em"  target="_blank"></a> </li>
-            <li> <a href="https://www.google.com/"  class="fab fa-linkedin" style= "font-size: 2em"  target="_blank"></a> </li>
+            <li> <a href="https://www.linkedin.com/in/isabella-rodriguez-cruz-00ba39194/"  class="fab fa-linkedin" style= "font-size: 2em"  target="_blank"></a> </li>
         </div>
 
       </ul>

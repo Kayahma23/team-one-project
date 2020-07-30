@@ -89,7 +89,7 @@ function getPicture() {
   fetch('/my-form-handler').then((response) => {
         return response.text();
       })
-      .then(addToPage);
+      .then(addToPage).then(getTranslation);
 }
 
 /**
