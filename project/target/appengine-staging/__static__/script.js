@@ -45,35 +45,42 @@ function getTranslation(selectedObject) {
     document.getElementById('language').value = selectedObject.value;
     //set variable text to the text from image uploaded by user
     const text = document.getElementById('textFromImage').innerHTML;
+
+// function getTranslation(selectedObject) {
+//     //set the language code of the selected language
+//     document.getElementById('language').value = selectedObject.value;
+//     //set variable text to the text from image uploaded by user
+//     const text = document.getElementById('textFromImage').innerHTML;
+
     
-    //set languageCode to the code of the selected language
-    const languageCode = document.getElementById('language').value;
+//     //set languageCode to the code of the selected language
+//     const languageCode = document.getElementById('language').value;
 
-    //creates new search parameters to be sent with the POST request
-    const params = new URLSearchParams();
-    params.append('text', text);
-    params.append('languageCode', languageCode);
+//     //creates new search parameters to be sent with the POST request
+//     const params = new URLSearchParams();
+//     params.append('text', text);
+//     params.append('languageCode', languageCode);
 
-    //Once language is selected, create a POST request with the text and language code
-    //the doPost method in DataServlet will receive the text and language code and translate the text
-    //and send response with translated text
-    const fetchPromise = fetch('/data', {
-          method: 'POST',
-          body: params
-        });
+//     //Once language is selected, create a POST request with the text and language code
+//     //the doPost method in DataServlet will receive the text and language code and translate the text
+//     //and send response with translated text
+//     const fetchPromise = fetch('/data', {
+//           method: 'POST',
+//           body: params
+//         });
 
-    fetchPromise.then(handleResponse);
-}
-//convert the response to raw text
-function handleResponse(response) {
-    const responsePromise = response.text();
-    responsePromise.then(createMessage);
-}
-//build the HTML of the page
-function createMessage(messageText) {
-    const message = document.getElementById('result');
-    message.innerText = messageText.replace(/<br>/g, "\n");
-}
+//     fetchPromise.then(handleResponse);
+// }
+// //convert the response to raw text
+// function handleResponse(response) {
+//     const responsePromise = response.text();
+//     responsePromise.then(createMessage);
+// }
+// //build the HTML of the page
+// function createMessage(messageText) {
+//     const message = document.getElementById('result');
+//     message.innerText = messageText.replace(/<br>/g, "\n");
+// }
 
 /**
  * Grabs picture from form handler servlet
@@ -93,3 +100,19 @@ function addToPage(response) {
     picContainer.innerHTML = response;
 }
 
+
+/**
+ * Shows green check.
+ */
+function showCheck() {
+    document.getElementById("checkmark").style.display = "block";
+}
+
+/**
+ * Hides green check.
+ */
+// function hideCheck() {
+//     document.getElementById("checkmark").style.display = "none";
+// }
+
+}

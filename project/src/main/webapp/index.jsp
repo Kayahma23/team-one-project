@@ -22,39 +22,66 @@ limitations under the License.
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Team one project</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- <link href="https://fonts.googleapis.com/css2?family=Carter+One&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script type="text/javascript" src="js/bootstrap-filestyle.min.js"> </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/object-fit-images/3.2.4/ofi.min.js"></script> 
+    <script src="https://kit.fontawesome.com/acf9dd9cf2.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
   <body onload="getPicture()">
       <div class="jumbotron">
         <div class="jumbotron-bg"></div>
-        <div class="container">
-            <center>  
-            <h1 class="display-4">Translate Your Image Text</h1>
-            <h2><p>Upload your image. Choose your language. Translate its text.</p></h2>
-            <hr class="my-4">
-            <p>Google Software Product Sprint Summer 2020</p>
-            </center>
+            <div class="container">
+                <center>  
+                <h1 class="app-title">PicReader</h1>
+                <!-- <hr class="my-4"> -->
+                <p>Google Software Product Sprint Summer 2020</p>
+                </center>
+            </div>
         </div> 
       </div>
+
       <center>
       
+
+    <center><p>Upload your image. Choose your language. Translate its text.</p></center>
+
     <!-- form for picture upload -->
     <form method="POST" enctype="multipart/form-data" action="<%= uploadUrl %>">
-      <p>Upload an image:</p>
-      <input type="file" name="image">
-      <br/><br/>
-      <button class="button1">Submit</button>
+    <center>
+    <div class="buttonRow">
+      <div class="buttonCol">
+        <div class="fileButton">
+            <!-- <center> -->
+            <label for="file-input">Upload image</label><input type="file" name="image" id="file-input" onchange="showCheck()">
+        </div>
+      </div>
+      <div class="buttonCol"> 
+          <img id="checkmark" src="images/lightGreenCheck.png" width="27" height="25">
+      </div>
+    <!-- <select class="button1" id="language" onchange="getTranslation(this);"> -->
+      <div class="buttonCol">
+        <select class="selectButton" name="language" id="language">
+        <option value="en" selected>Choose language</option>
+        <option value="en">English</option>
+        <option value="es">Spanish</option>
+        <option value="hi">Hindi</option>
+        </select>
+      </div>
+      <div class="buttonCol">
+        <button class="mainButtons">Submit</button>
+      </div>
+    </div>
+    </center>
     </form>
     <div id="picture"></div>
+
 
 
     <!-- translation selector  -->
@@ -81,14 +108,47 @@ limitations under the License.
     <br></br>
     <div id="result"></div>
     </center>
-    <span class="moji">
-        <span id="bit">
-        <a href="https://github.com/alexrodriguez0" target="_blank"><img src="images/A-Img.png" alt="Alex Img" id=Alex>
+
+    <footer class="flex-rw">
+    <div id="bit">
+      <ul class="bullet"> 
+
+         <li> <img src="images/A-Img.png" alt="Alex Img" id="Alex"> </li>
+
+      <div id="float">
+
+            <li> <a class="fab fa-github-square" href="https://github.com/alexrodriguez0" style= "font-size: 2em"  target="_blank"></a> </li>
+            <li> <a class="fab fa-linkedin" href="https://www.linkedin.com/in/alexandra-rodriguez-evans/" style= "font-size: 2em"  target="_blank"></a> </li>
       
-        <a href="https://github.com/Kayahma23" target="_blank"><img src="images/K-Img.png" alt="Kay Img"  id=Kay> 
+      </div>
+
+        </ul>
+      
+      <ul class="bullet"> 
+         <li> <img src="images/K-Img.png" alt="Kay Img"  id="Kay"> </li>
+
+      <div id="float">
+
+            <li> <a href="https://github.com/Kayahma23" class="fab fa-github-square" style= "font-size: 2em" target="_blank" id="g"></a> </li>
+            <li> <a href="https://www.linkedin.com/in/kayahma-brown/"  class="fab fa-linkedin" style= "font-size: 2em"  target="_blank"></a> </li>
+
+       </div>
+
+      </ul>
    
-        <a href="https://github.com/IsabellaRC" target="_blank"><img src="images/I-Img.png" alt="Isa Img"  id=Isa> 
-        </span>
-    </span>
+      <ul class="bullet"> 
+           <li ><img src="images/I-Img.png" alt="Isa Img"  id="Isa"> </li>
+        
+        <div id="float">
+            <li> <a href="https://github.com/IsabellaRC" class="fab fa-github-square" style= "font-size: 2em"  target="_blank"></a> </li>
+            <li> <a href="https://www.linkedin.com/in/isabella-rodriguez-cruz-00ba39194/"  class="fab fa-linkedin" style= "font-size: 2em"  target="_blank"></a> </li>
+        </div>
+
+      </ul>
+
+        </div>
+    </footer>
+    <div id="translation"></div>
+
   </body>
 </html> 

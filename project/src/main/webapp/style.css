@@ -1,3 +1,4 @@
+
 #content {
   margin-left: auto;
   margin-right: auto;
@@ -12,18 +13,20 @@ body {
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
     font-weight: 300;
     background-color: rgb(255, 255, 255);
+    color:black;
 }
 
 .jumbotron {
   position:relative;
   overflow:hidden;
   background: none;
-
+  max-height: 250px; 
 }
 
 .jumbotron .container {
   position:relative;
   z-index:2;
+
   font-family: 'Carter One', cursive;
 }
 
@@ -40,6 +43,17 @@ img.blur {
   filter: blur(4px);
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
   font-weight: 300;
+
+}
+
+.jumbotron .app-title {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", serif; 
+  font-size: 130px;
+  font-weight: 700;
+  font-stretch: extra-expanded;
+  color: black;
+  line-height: 90%;
+
 }
 
 .jumbotron .jumbotron-bg {
@@ -48,7 +62,7 @@ img.blur {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url(images/languagesgood.png);
+    background-image: url(images/test-background.png);
     background-position: 0% 25%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -61,44 +75,187 @@ img.blur {
 
 }
 
-.button1 {
-  background-color:rgb(255, 255, 255);
+.mainButtons {
+  position: relative; 
+  height: 35px; 
+  width: 70px;
+  background-color: #F0FFFF;
   color: black;
-  padding: 5px 12px;
-  border: 2px solid #555555;
+  padding: 5px 5px;
+  border: 2px solid;
   cursor: pointer;
-  border-radius: 6px;
+  border-radius: 3px;
+  border-color: #00BFFF;
+  margin: 10px 10px 10px 10px;
 }
 
-.button1:hover {
-  background-color: #555555;
-  color: rgb(255, 255, 255);
+.mainButtons:selected {
+  border: none;
 } 
 
 #Alex{
     border-radius: 100%;
-    max-width: 10%; 
-    max-height: 10%;
+    max-width: 20%; 
+    max-height: 20%;
    /*margin-right: 100px; */
  
 }
 
 #Isa{
     border-radius: 100%;
-    max-width: 10%; 
-    max-height: 10%;
+    max-width: 20%; 
+    max-height: 20%;
     /*margin-left: 550px; */
   /*justify-content: flex-end; */
 }
 
 #Kay{
     border-radius: 100%;
-    max-width: 10%; 
-    max-height: 10%;
+    max-width: 20%; 
+    max-height: 20%;
 }
 
 #bit{
     display:flex;
     justify-content:space-around;
     align-items: center;
+    padding-left: 250px;
+    /*padding-top: 35px;
+    padding-bottom:35px;
+    */
 }
+
+/* .imageContent {
+    float: left;
+    margin: 10px;
+}
+
+#textFromImage {
+    float: left;
+    margin: 10px;
+} */
+
+.fileButton { 
+    position: relative;
+    margin: 10px 0px 10px 10px; 
+    overflow: hidden;
+}
+.fileButton > input[type="file"] { 
+    position: absoulte; 
+    opacity: 0; 
+    top: 0; 
+    left: 0; 
+    right: 0;
+    bottom: 0;
+    display: none;
+}
+.fileButton > label {
+    /* position: absolute; */
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    font-weight: 300;
+    background-color:#F0FFFF;
+    /* background-size: 100%; */
+    color: black;
+    padding: 5px 5px;
+    border: 2px solid;
+    cursor: pointer;
+    border-radius: 2px;
+    border-color: #00BFFF;
+    height: 35px; 
+    width: 110px;
+    margin-right: 10px;
+    /* vertical-align: middle; */
+    
+}
+
+.fileButton > label:selected {
+    border: none;
+}
+
+.buttonCol {
+    /* align-content: center; */
+  /* width: 33.33%; */
+  float: left;
+}
+
+/* Clear floats after the columns */
+.buttonRow {
+    display:inline-table;
+    text-align: center;
+    /* align-items: center; */
+    height: auto;
+  /* content: ""; */
+  /* display: table; */
+  /* float: center; */
+  /* clear: both; */
+}
+
+option:checked { 
+    display:none; 
+}
+
+#checkmark {
+    display: none;
+    /* padding-top: 6px; */
+    position:relative;
+    margin-top: 13px;
+}
+
+.selectButton {
+    text-align-last:center;
+    position: relative; 
+    height: 35px; 
+    width: 140px;
+    background-color: #F0FFFF;
+    color: black;
+    padding: 6px 5px;
+    border: 2px solid;
+    cursor: pointer;
+    border-radius: 2px;
+    border-color: #00BFFF;
+    margin: 10px 10px 10px 10px;
+}
+
+@keyframes fade-in {
+  0%   {opacity: 0;}
+  25%  {opacity: 25;}
+  50%  {opacity: 50;}
+  100% {opacity: 100;}
+}
+
+footer {
+  background: rgb(173,216,230);
+  margin-top: auto;
+  width: 100%;
+  position:absolute;
+  bottom:0;
+}
+
+ul.bullet{
+    list-style-type: none;
+}
+
+#float li:hover ,
+.triggeredHover {
+  -moz-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -ms--transform: rotate(360deg);
+  transform: rotate(360deg);
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+#float li {
+  color: #595959;
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  -o-transition: all 0.8s;
+  -ms-transition: all 0.8s;
+  transition: all 0.8s;
+  display: inline-block;
+}
+
+
