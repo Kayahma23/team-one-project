@@ -30,10 +30,13 @@ limitations under the License.
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/object-fit-images/3.2.4/ofi.min.js"></script> 
+    <script src="https://kit.fontawesome.com/acf9dd9cf2.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
-  <body onload="getPicture()">
+
+  <body onload="getPicture()" id="content">
+      <header>
       <div class="jumbotron">
         <div class="jumbotron-bg"></div>
 
@@ -46,7 +49,11 @@ limitations under the License.
             </div>
         </div> 
       </div>
+      </header>
+     <!-- <center> -->
+      
     <center><p>Upload your image. Choose your language. Translate its text.</p></center>
+
     <!-- form for picture upload -->
     <form method="POST" enctype="multipart/form-data" action="<%= uploadUrl %>">
     <center>
@@ -67,6 +74,20 @@ limitations under the License.
         <option value="en">English</option>
         <option value="es">Spanish</option>
         <option value="hi">Hindi</option>
+        <option value="pt">Portuguese</option>
+        <option value="it">Italian</option>
+        <option value="fr">French</option>
+        <option value="ht">Creole</option>
+        <option value="he">Hebrew</option>
+        <option value="ja">Japanese</option>
+        <option value="ar">Arabic</option>
+        <option value="zh">Chinese(Simplified)</option>
+        <option value="nl">Dutch</option>
+        <option value="de">German</option>
+        <option value="pa">Punjabi</option>
+        <option value="ru">Russian</option>
+        <option value="vi">Vietnamese</option>
+        <option value="ko">Korean</option>
         </select>
       </div>
       <div class="buttonCol">
@@ -74,8 +95,52 @@ limitations under the License.
       </div>
     </div>
     </center>
-    </form>
     <div id="picture"></div>
     <div id="translation"></div>
+    </form>
+ 
   </body>
+        <div  class="spacer"> . </div>
+        <footer id="bit">
+            <ul class="bullet"> 
+
+                <li> <img src="images/A-Img.png" alt="Alex Img" id="Alex"> </li>
+                <li class="name"><p>Alex Rodriguez</p> </li>
+
+                <div id="float">
+
+                    <li class="git"> <a class="fab fa-github-square" href="https://github.com/alexrodriguezev" style= "font-size: 2em"  target="_blank"></a> </li>
+                    <li class="linkedin"> <a class="fab fa-linkedin" href="https://www.linkedin.com/in/alexandra-rodriguez-evans/" style= "font-size: 2em"  target="_blank"></a> </li>
+            
+                </div>
+
+            </ul>
+            
+            <ul class="bullet"> 
+                <li> <img src="images/K-Img.png" alt="Kay Img"  id="Kay"> </li>
+                <li class="name"><p>Kayahma Brown</p> </li>
+
+                <div id="float">
+                    
+                    <li class="git"> <a href="https://github.com/Kayahma23" class="fab fa-github-square" style= "font-size: 2em" target="_blank" id="g"></a> </li>
+                    <li class="linkedin"> <a href="https://www.linkedin.com/in/kayahma-brown/"  class="fab fa-linkedin" style= "font-size: 2em"  target="_blank"></a> </li>
+                    
+                </div>
+
+            </ul>
+        
+            <ul class="bullet"> 
+                <li ><img src="images/I-Img.png" alt="Isa Img"  id="Isa"> </li>
+                <li class="name"><p>Isabella Rodriguez</p> </li>
+                
+                <div id="float">
+
+                    <li class="git"> <a href="https://github.com/IsabellaRC" class="fab fa-github-square" style= "font-size: 2em"  target="_blank"></a> </li>
+                    <li class="linkedin"> <a href="https://www.linkedin.com/in/isabella-rodriguez-cruz-00ba39194/"  class="fab fa-linkedin" style= "font-size: 2em"  target="_blank"></a> </li>
+               
+                </div>
+
+            </ul>
+
+        </footer>
 </html> 
